@@ -1,0 +1,16 @@
+Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\DIO.Bank.exe
+Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\DIO.Bank.deps.json
+Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\DIO.Bank.runtimeconfig.json
+Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\DIO.Bank.runtimeconfig.dev.json
+Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\DIO.Bank.dll
+Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\ref\DIO.Bank.dll
+Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\DIO.Bank.pdb
+Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\obj\Debug\net5.0\DIO.Bank.csprojAssemblyReference.cache
+Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\obj\Debug\net5.0\DIO.Bank.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\obj\Debug\net5.0\DIO.Bank.AssemblyInfoInputs.cache
+Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\obj\Debug\net5.0\DIO.Bank.AssemblyInfo.cs
+Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\obj\Debug\net5.0\DIO.Bank.csproj.CoreCompileInputs.cache
+Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\obj\Debug\net5.0\DIO.Bank.dll
+Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\obj\Debug\net5.0\ref\DIO.Bank.dll
+Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\obj\Debug\net5.0\DIO.Bank.pdb
+Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\obj\Debug\net5.0\DIO.Bank.genruntimeconfig.cache
