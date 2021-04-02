@@ -7,6 +7,7 @@ namespace DIO.Bank
 {
     public class ArmazenaDados
     {
+		/// <summary>Serializa e salva uma List num arquivo</summary>
         public static void SaveList<T>(string fileName, List<T> list)
 		{
 			// Gain code access to the file that we are going
@@ -23,10 +24,11 @@ namespace DIO.Bank
 			}
 			catch (Exception ex)
 			{
-			Console.WriteLine(ex.Message);
+				Console.WriteLine(ex.Message);
 			}
 		}
 
+		/// <summary>Desserializa e carrega uma List a partir de um arquivo</summary>
 		public static List<T> LoadList<T>(string fileName)
 		{
 			var list = new List<T>();

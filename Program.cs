@@ -7,13 +7,16 @@ namespace DIO.Bank
 	{
 		static List<Conta> listContas = new List<Conta>();
 		static void Main(string[] args)
-		{
-			listContas = ArmazenaDados.LoadList<Conta>("first.dat");
+		{						
+			//Soluciona problema de diretório variável entre "dotnet run", vscode e visual studio
+			String diretorioBase = AppDomain.CurrentDomain.BaseDirectory;
+			//https://jeremybytes.blogspot.com/2020/02/set-working-directory-in-visual-studio.html
+
+			listContas = ArmazenaDados.LoadList<Conta>(diretorioBase + "first.dat");
 			if(listContas.Count == 0)
 				Console.WriteLine("Não foi possível carregar a lista de contas!");
 			else
-				Console.WriteLine("Lista de contas carregada com sucesso!");
-			
+				Console.WriteLine("Lista de contas carregada com sucesso!");			
 
 			string opcaoUsuario = ObterOpcaoUsuario();
 
@@ -48,7 +51,10 @@ namespace DIO.Bank
 			}
 			
 			Console.WriteLine("Obrigado por utilizar nossos serviços.");
-			ArmazenaDados.SaveList("first.dat", listContas);
+
+			//Salva dados de contas antes de encerrar:
+			ArmazenaDados.SaveList(diretorioBase + "first.dat", listContas);
+			//mantém console aberto até que pressionem uma tecla:
 			Console.ReadLine();				
 		}
 
@@ -65,42 +71,26 @@ namespace DIO.Bank
 
 		private static void Sacar()
 		{
-			Console.Write("Digite o número da agência: ");
-			int agencia = int.Parse(Console.ReadLine());
-
-			Console.Write("Digite o número da conta: ");
-			int conta = int.Parse(Console.ReadLine());
-
-			//busca objeto por agência e conta
-			List<Conta> resultList = listContas.FindAll(x => (x.NumConta == conta) && (x.NumAgencia == agencia));
-			Conta objConta = null;
-
-			if(resultList.Count == 1){
-				objConta = resultList[0];
-			}
-			else{
-				Console.WriteLine("Contas duplicadas encontradas:");
-				foreach (var item in resultList)
-				{
-					Console.WriteLine(item);
-				}
-				Console.WriteLine("Procure sua agência!");
+			Conta objConta = Conta.PedeAgenciaConta(listContas);
+			if (objConta == null)
+            {
+				Console.WriteLine("Conta inválida!");
 				return;
-			}
+			}				
 
 			Console.Write("Digite o valor a ser sacado: ");
 			double valorSaque = double.Parse(Console.ReadLine());
 
 			Console.Write("Digite a senha: ");
-			int senha = int.Parse(Console.ReadLine());
+			string senha = Console.ReadLine();			
 
-			
-
-			objConta.Sacar(valorSaque);
+			objConta.Sacar(valorSaque,senha);
 		}
 
 		private static void Transferir()
 		{
+			//TODO
+			//Inserir pedido de agência e conta
 			Console.Write("Digite o número da conta de origem: ");
 			int indiceContaOrigem = int.Parse(Console.ReadLine());
 
@@ -110,7 +100,10 @@ namespace DIO.Bank
 			Console.Write("Digite o valor a ser transferido: ");
 			double valorTransferencia = double.Parse(Console.ReadLine());
 
-            listContas[indiceContaOrigem].Transferir(valorTransferencia, listContas[indiceContaDestino]);
+			Console.Write("Digite a senha: ");
+			string senha = Console.ReadLine();
+
+			listContas[indiceContaOrigem].Transferir(senha, valorTransferencia, listContas[indiceContaDestino]);
 		}
 
 		private static void InserirConta()
@@ -127,16 +120,22 @@ namespace DIO.Bank
 			int entradaAgencia = int.Parse(Console.ReadLine());
 
 			Console.Write("Digite o número da conta: ");
-			int entradaConta = int.Parse(Console.ReadLine());
-
-			Console.Write("Digite a senha de 6 dígitos numéricos: ");
-			int entradaSenha = int.Parse(Console.ReadLine());			
+			int entradaConta = int.Parse(Console.ReadLine());									
 
 			Console.Write("Digite o saldo inicial: ");
 			double entradaSaldo = double.Parse(Console.ReadLine());
 
 			Console.Write("Digite o crédito: ");
 			double entradaCredito = double.Parse(Console.ReadLine());
+
+			Console.Write("Digite a senha de 6 dígitos numéricos: ");
+			String entradaSenha = Console.ReadLine();
+
+			while (!Password.ValidaSenha(entradaSenha))
+			{
+				Console.WriteLine("Por favor, insira uma senha numérica de 6 dígitos.");
+				entradaSenha = Console.ReadLine();
+			} 
 
 			Conta novaConta = new Conta(pTipoConta: (TipoConta)entradaTipoConta,
 										pSaldo: entradaSaldo,
