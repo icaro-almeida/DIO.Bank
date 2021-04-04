@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "BMOzRjHudYqA8W82r0VcyXRok13ogyDXsRtS2l5vzDVxZoN6feZbOdJtUVBGu47Udj6OTS1Y4F1hoLUE0fiD+Q==",
+  "dgSpecHash": "v60reqEt7bSthG6asZBxAXwggiUevV1jOr3nbNCnQB9hv3C78dm07UtdxR5ipm1UwoIdEtbxZJVXrOCdmZpFjA==",
   "success": true,
   "projectFilePath": "Z:\\Meu Drive\\001-Guardar\\016-Cursos_e_aulas\\Bootcamp_Localiza\\05-AplicacaoBancariaDotNet\\DIO.Bank\\DIO.Bank.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Icaro\\.nuget\\packages\\nlog\\4.7.9\\nlog.4.7.9.nupkg.sha512"
+  ],
   "logs": []
 }

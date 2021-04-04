@@ -1,16 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 
 namespace DIO.Bank
 {
 	class Program
-	{
+	{	
 		static List<Conta> listContas = new List<Conta>();
+
 		static void Main(string[] args)
-		{						
+		{
 			//Soluciona problema de diretório variável entre "dotnet run", vscode e visual studio
 			String diretorioBase = AppDomain.CurrentDomain.BaseDirectory;
 			//https://jeremybytes.blogspot.com/2020/02/set-working-directory-in-visual-studio.html
+
+			
 
 			listContas = ArmazenaDados.LoadList<Conta>(diretorioBase + "first.dat");
 			if(listContas.Count == 0)
@@ -66,7 +71,7 @@ namespace DIO.Bank
 			Console.Write("Digite o valor a ser depositado: ");
 			double valorDeposito = double.Parse(Console.ReadLine());
 
-            listContas[indiceConta].Depositar(valorDeposito);
+            listContas[indiceConta].Depositar(valorDeposito);			
 		}
 
 		private static void Sacar()
@@ -84,7 +89,8 @@ namespace DIO.Bank
 			Console.Write("Digite a senha: ");
 			string senha = Console.ReadLine();			
 
-			objConta.Sacar(valorSaque,senha);
+			if (objConta.Sacar(valorSaque,senha))
+				Logger.Log($"Saque de {valorSaque} realizado na conta {objConta.NumConta}");
 		}
 
 		private static void Transferir()
