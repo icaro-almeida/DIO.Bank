@@ -42,6 +42,7 @@ namespace DIO.Bank
 			//executa retirada
             this.Saldo -= pValorSaque;
 
+			//todo alterar mensagem abaixo
 			//Exibe saldo atual
 			Console.WriteLine($"Conta número {this.NumConta} de {this.Nome}");
 			Console.WriteLine($"Saldo atual: {this.Saldo}");
@@ -54,8 +55,9 @@ namespace DIO.Bank
 		{
 			this.Saldo += valorDeposito;
 
+			//todo remover esta mensagem e adicionar fora daqui. deixar aqui msg de depósito realizado.
             Console.WriteLine("Saldo atual da conta de {0} é {1}", this.Nome, this.Saldo);
-		}        
+		}
 
         public void Transferir(string pSenha, double valorTransferencia, Cliente contaDestino)
 		{
@@ -76,7 +78,7 @@ namespace DIO.Bank
 			}
             else if(resultsList.Count == 0)
 			{
-				Console.WriteLine("Conta não encontrada!");
+				Console.WriteLine($"Conta [{pConta}] disponível/não cadastrada!");
 				return null;
 			}
 			else
@@ -91,9 +93,9 @@ namespace DIO.Bank
 			}
         }
 
-		internal static Cliente PedeContaEBuscaCliente(List<Cliente> listClientes)
+		internal static Cliente PedeContaEBuscaCliente(List<Cliente> listClientes, string msg = "Digite o número da conta: ")
 		{		
-			Console.Write("Digite o número da conta: ");
+			Console.Write(msg);
 			int conta = int.Parse(Console.ReadLine());
 
 			return Cliente.BuscaConta(listClientes, conta);

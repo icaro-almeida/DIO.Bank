@@ -226,6 +226,7 @@ namespace DIO.Bank
 
         private static void Depositar()
 		{
+			//todo alterar para pedeconta e busaca
 			Console.Write("Digite o número da conta: ");
 			int numConta = int.Parse(Console.ReadLine());
 
@@ -269,24 +270,28 @@ namespace DIO.Bank
 		}
 
 		private static void Transferir()
-		{
-			//TODO
-			//Inserir pedido de agência e conta
-			Console.Write("Digite o número da conta de origem: ");
-			int indiceContaOrigem = int.Parse(Console.ReadLine());
+		{			
+			Cliente clienteOrigem = Cliente.PedeContaEBuscaCliente(listClientes, "Digite o número da conta de origem: ");
+			if (clienteOrigem == null)
+			{
+				Console.WriteLine("Conta de origem não encontrada!");
+				return;
+			}
 
-			Console.Write("Digite o número da conta de destino: ");
-			int indiceContaDestino = int.Parse(Console.ReadLine());
+			Cliente clienteDestino = Cliente.PedeContaEBuscaCliente(listClientes, "Digite o número da conta de destino: ");
+			if (clienteDestino == null)
+			{
+				Console.WriteLine("Conta de destino não encontrada!");
+				return;
+			}
 
 			Console.Write("Digite o valor a ser transferido: ");
 			double valorTransferencia = double.Parse(Console.ReadLine());
 
 			Console.Write("Digite a senha: ");
-			string senha = Console.ReadLine();
+			string senha = Console.ReadLine();			
 
-			//todo corrigir a referencia do objeto conta abaixo que ainda está usnado índice diretamente
-
-			listClientes[indiceContaOrigem].Transferir(senha, valorTransferencia, listClientes[indiceContaDestino]);
+			clienteOrigem.Transferir(senha, valorTransferencia, clienteDestino);
 		}
 
 		/// <summary>
@@ -303,7 +308,6 @@ namespace DIO.Bank
 			bool contaDisponivel = false;
             do
             {
-				//todo alterar mensagem de "conta nao encontrada ao verificar disponibilidade da conta"
 				contaDisponivel = true;
 				Console.Write("Insira o número desejado para a conta: ");
 				entradaNumeroConta = int.Parse(Console.ReadLine());
