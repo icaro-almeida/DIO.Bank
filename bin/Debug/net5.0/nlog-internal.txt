@@ -1,0 +1,8 @@
+2021-04-04 22:44:09.4138 Info Message Template Auto Format enabled
+2021-04-04 22:44:09.5324 Info Adding target FileTarget(Name=file)
+2021-04-04 22:44:09.6151 Info Validating config: TargetNames=file, ConfigItems=16, FilePath=Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\NLog.config
+2021-04-04 22:44:09.6435 Info Configuration initialized.
+2021-04-04 22:44:09.6888 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.9.12899. Product version: 4.7.9+e8712e62842e2d74d60fdf37cf74d743750e5ca2. GlobalAssemblyCache: False
+2021-04-04 22:44:13.3333 Info Configuration file change detected! Reloading in 1000ms...
+2021-04-04 22:44:14.2418 Info AppDomain Shutting down. Logger closing...
+2021-04-04 22:44:14.2913 Info Logger has been shut down.

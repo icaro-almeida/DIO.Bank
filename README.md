@@ -4,6 +4,10 @@
 
 Projeto de sistema para operador de caixa bancário com funcionalidades de saque, transferência, depósito
 
+-Uso de herança, onde as classes Cliente e Operador herdam da classe Usuario;
+-Persistência dos cadastros através da classe ArmazenaDados com BinnaryFormatter.Serialize (Obsoleto);
+-Armazenamento de senhas usando hash e salt;
+-Logging através da plataforma NLog.
 
 
 ## Contato

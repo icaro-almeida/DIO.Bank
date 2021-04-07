@@ -27,7 +27,7 @@ namespace DIO.Bank
 		/// </returns>
 
 		//https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/language-specification/documentation-comments#see
-		public static bool ValidaSenha(String pPassword)
+		public static bool ValidaRegraSenha(String pPassword)
         {
 			if (pPassword.Length != 6)
             {
