@@ -75,32 +75,38 @@ namespace DIO.Bank
             return false;
         }
 
-        internal static Cliente PedeContaEBuscaCliente(List<Cliente> pListClientes, string pMsg = "Digite o número da conta: ", bool pVerboseForAvailability = true)
+        ///<summary>Busca objeto na lista Conta por agência e conta</summary>
+        internal static Cliente BuscaConta(List<Cliente> pListContas, int pConta, bool pVerboseForAvailability = true)
         {
-            Console.Write(pMsg);
-            int inputConta = int.Parse(Console.ReadLine());
-
             //List<Conta> resultsList = pListContas.FindAll(x => (x.NumConta == pConta) && (x.NumAgencia == pAgencia));		
-            List<Cliente> resultsList = pListClientes.FindAll(x => (x.NumConta == inputConta));
+            List<Cliente> resultsList = pListContas.FindAll(x => (x.NumConta == pConta));
 
             if (resultsList.Count == 1)
             {
                 if (pVerboseForAvailability)
-                    Console.WriteLine($"Conta [{inputConta}] já cadastrada!");
+                    Console.WriteLine($"Conta [{pConta}] já cadastrada!");
                 else
-                    Console.WriteLine($"Conta [{inputConta}] encontrada!");
-
+                    Console.WriteLine($"Conta [{pConta}] encontrada!");
                 return resultsList[0];
             }
             else
             {
                 if (pVerboseForAvailability)
-                    Console.WriteLine($"Conta [{inputConta}] disponível!");
+                    Console.WriteLine($"Conta [{pConta}] disponível!");
                 else
-                    Console.WriteLine($"Conta [{inputConta}] não encontrada!");
+                    Console.WriteLine($"Conta [{pConta}] não encontrada!");
 
                 return null;
             }
+            
+        }
+
+        internal static Cliente PedeContaEBuscaCliente(List<Cliente> pListClientes, string pMsg = "Digite o número da conta: ", bool pVerboseForAvailability = true)
+        {
+            Console.Write(pMsg);
+            int conta = int.Parse(Console.ReadLine());
+
+            return Cliente.BuscaConta(pListClientes, conta, pVerboseForAvailability);
         }
 
         public override string ToString()
