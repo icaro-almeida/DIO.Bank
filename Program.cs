@@ -116,20 +116,14 @@ namespace DIO.Bank
                         case "1":
                             isValidOption = true;
                             Depositar();
-                            //Salva alterações no arquivo de clientes;
-                            ArmazenaDados.SaveList(pathListClientes, listClientes);
                             break;
                         case "2":
                             isValidOption = true;
                             Sacar();
-                            //Salva alterações no arquivo de clientes;
-                            ArmazenaDados.SaveList(pathListClientes, listClientes);
                             break;
                         case "3":
                             isValidOption = true;
                             Transferir();
-                            //Salva alterações no arquivo de clientes;
-                            ArmazenaDados.SaveList(pathListClientes, listClientes);
                             break;
                         case "A":
                             isValidOption = true;
@@ -138,20 +132,14 @@ namespace DIO.Bank
                         case "B":
                             isValidOption = true;
                             InserirConta();
-                            //Salva alterações no arquivo de clientes;
-                            ArmazenaDados.SaveList(pathListClientes, listClientes);
                             break;
                         case "C":
                             isValidOption = true;
                             ExcluirConta();
-                            //Salva alterações no arquivo de clientes;
-                            ArmazenaDados.SaveList(pathListClientes, listClientes);
                             break;
                         case "D":
                             isValidOption = true;
                             AlterarSenhaDeConta();
-                            //Salva alterações no arquivo de clientes;
-                            ArmazenaDados.SaveList(pathListClientes, listClientes);
                             break;
                         case "L":
                             isValidOption = true;
@@ -173,11 +161,11 @@ namespace DIO.Bank
         }
 
         /// <summary>
-        /// 
+        /// Solicita dados e altera a senha da conta de cliente
         /// </summary>
         private static void AlterarSenhaDeConta()
         {
-            Cliente objCliente = Cliente.PedeContaEBuscaCliente(listClientes);
+            Cliente objCliente = Cliente.PedeContaEBuscaCliente(listClientes, pVerboseForAvailability: false);
             if (objCliente == null)
             {
                 return;
@@ -202,7 +190,12 @@ namespace DIO.Bank
             }
 
             if (objCliente.AlteraSenha(senhaAntiga, senhaNova))
+            {
+                //salva o arquivo incluindo a nova conta
+                ArmazenaDados.SaveList(pathListClientes, listClientes);
                 logger.Info($"Senha da conta {objCliente.NumConta} alterada com sucesso!");
+            }
+                
         }//fim AlterarSenhaDeConta()
 
         /// <summary>
@@ -220,7 +213,11 @@ namespace DIO.Bank
             }
 
             if (listClientes.Remove(cliente))
+            {
+                //salva o arquivo incluindo a nova conta
+                ArmazenaDados.SaveList(pathListClientes, listClientes);
                 logger.Info($"Conta [{cliente.NumConta}] removida com sucesso!");
+            }
         }
 
         /// <summary>
@@ -234,9 +231,11 @@ namespace DIO.Bank
                 return;
             }
 
-            double valorDeposito = PedeEvalidaDouble("Digite o valor a ser depositado: ");            
+            double valorDeposito = EeS.PedeEvalidaDouble("Digite o valor a ser depositado: ");
 
             objCliente.Depositar(valorDeposito);
+            //salva o arquivo incluindo a nova conta
+            ArmazenaDados.SaveList(pathListClientes, listClientes);
             logger.Info($"Depósito de {valorDeposito} na conta [{objCliente.NumConta}], de {objCliente.Nome}, realizado com sucesso!");
         }
 
@@ -259,6 +258,8 @@ namespace DIO.Bank
 
             if (objConta.Sacar(valorSaque, senha))
             {
+                //salva o arquivo incluindo a nova conta
+                ArmazenaDados.SaveList(pathListClientes, listClientes);
                 logger.Info($"Saque de {valorSaque} realizado na conta {objConta.NumConta}");
             }
         }
@@ -288,6 +289,8 @@ namespace DIO.Bank
 
             if (clienteOrigem.Transferir(senha, valorTransferencia, clienteDestino))
             {
+                //salva o arquivo incluindo a nova conta
+                ArmazenaDados.SaveList(pathListClientes, listClientes);
                 logger.Info($"Transferência de {valorTransferencia} realizada de conta [{clienteOrigem.NumConta}] para [{clienteDestino.NumConta}]");
             }
         }
@@ -299,14 +302,12 @@ namespace DIO.Bank
         {
             Console.WriteLine("Inserir nova conta");
 
-            Console.Write("Digite 1 para Conta Física ou 2 para Jurídica: ");
-            int entradaTipoConta = int.Parse(Console.ReadLine());
+            int entradaTipoConta = EeS.PedeEvalidaInteger("Digite 1 para Conta Física ou 2 para Jurídica: ");
 
-            int entradaNumeroConta = 0;
+            int entradaNumeroConta = EeS.PedeEvalidaInteger("Insira o número desejado para a conta: ");
+
             bool contaDisponivel = false;
             Cliente cliente = null;
-            Console.WriteLine("Insira o número desejado para a conta: ");
-            entradaNumeroConta = int.Parse(Console.ReadLine());
             do
             {
                 contaDisponivel = true;
@@ -316,17 +317,16 @@ namespace DIO.Bank
                                                             != null)
                 {
                     contaDisponivel = false;
-                    Console.WriteLine("Insira outro número para a conta: ");
-                    entradaNumeroConta = int.Parse(Console.ReadLine());
+                    entradaNumeroConta = EeS.PedeEvalidaInteger("Insira outro número para a conta: ");
                 }
             } while (contaDisponivel == false);
 
             Console.Write("Digite o Nome do Cliente: ");
             string entradaNome = Console.ReadLine();
 
-            double entradaSaldo = PedeEvalidaDouble("Digite o saldo inicial: ");
+            double entradaSaldo = EeS.PedeEvalidaDouble("Digite o saldo inicial: ");
 
-            double entradaCredito = PedeEvalidaDouble("Digite o crédito concedido: ");
+            double entradaCredito = EeS.PedeEvalidaDouble("Digite o crédito concedido: ");
 
             Console.Write("Crie a senha com 6 dígitos numéricos: ");
             String entradaSenha = Console.ReadLine();
@@ -349,59 +349,6 @@ namespace DIO.Bank
             ArmazenaDados.SaveList(pathListClientes, listClientes);
             logger.Info("Conta Criada: " + novaConta.ToString());
         }
-
-        /// <summary>
-        /// Solicita ao usuário e valida uma entrada numérica Double
-        /// </summary>
-        /// <param name="pMsg"></param>
-        /// <returns></returns>
-        public static double PedeEvalidaDouble(string pMsg)
-        {
-            bool isInputOk = false;
-            double entradaDoUsuario = 0;
-            while (!isInputOk)
-            {
-                try
-                {
-                    Console.WriteLine(pMsg);
-                    entradaDoUsuario = double.Parse(Console.ReadLine());
-                    isInputOk = true;
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("Digite apenas números!");
-                    isInputOk = false;
-                }
-            }
-            return entradaDoUsuario;
-        }
-
-        /// <summary>
-        /// Solicita ao usuário e valida uma entrada numérica int
-        /// </summary>
-        /// <param name="pMsg"></param>
-        /// <returns></returns>
-        public static double PedeEvalidaInteger(string pMsg)
-        {
-            bool isInputOk = false;
-            int entradaDoUsuario = 0;
-            while (!isInputOk)
-            {
-                try
-                {
-                    Console.WriteLine(pMsg);
-                    entradaDoUsuario = int.Parse(Console.ReadLine());
-                    isInputOk = true;
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("Digite apenas números!");
-                    isInputOk = false;
-                }
-            }
-            return entradaDoUsuario;
-        }
-
 
         /// <summary>
         /// Lista contas em ListClientes
