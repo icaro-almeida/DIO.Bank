@@ -26,6 +26,11 @@ namespace DIO.Bank
 			{
 				return resultsList[0];
 			}
+			else if (resultsList.Count == 0)
+			{
+				Console.WriteLine($"Operador [{pUsuario}] disponível/não cadastrado!");
+				return null;
+			}
 			else
 			{
 				Console.WriteLine("Operadores duplicados encontrados:");
@@ -45,17 +50,24 @@ namespace DIO.Bank
 			string user = null;
 			do
 			{
-				Console.WriteLine("Usuário: ");
+				Console.WriteLine();
+				Console.WriteLine("---- LOGIN DO OPERADOR ----");
+				Console.Write("Usuário: ");
 				user = Console.ReadLine();				
 				operador = Operador.BuscaOperador(pListOperadores, user);
 			} while (operador == null);
 
 			string pass = null;
+			bool senhaCorreta = true;
 			do
 			{
-				Console.WriteLine("Senha:");
+                if (!senhaCorreta)
+                {
+					Console.WriteLine("Senha incorreta!");
+                }
+				Console.Write("Senha: ");
 				pass = Console.ReadLine();				
-			} while (!Password.CompararSenhas(pass, operador.Salt, operador.Senha));
+			} while (!(senhaCorreta = Password.CompararSenhas(pass, operador.Salt, operador.Senha)));
 
 			return operador;
 		}

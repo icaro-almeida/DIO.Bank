@@ -59,11 +59,13 @@ namespace DIO.Bank
             Console.WriteLine("Saldo atual da conta de {0} é {1}", this.Nome, this.Saldo);
 		}
 
-        public void Transferir(string pSenha, double valorTransferencia, Cliente contaDestino)
+        public bool Transferir(string pSenha, double valorTransferencia, Cliente contaDestino)
 		{
 			if (this.Sacar(valorTransferencia, pSenha)){
                 contaDestino.Depositar(valorTransferencia);
+				return true;
             }
+			return false;
 		}
 
 		///<summary>Busca objeto na lista Conta por agência e conta</summary>
@@ -104,11 +106,12 @@ namespace DIO.Bank
 		public override string ToString()
 		{
             string retorno = "";
-            retorno += "TipoConta " + this.TipoConta + " | ";
+			retorno += "Conta [" + this.NumConta + "] | ";
+			retorno += "TipoConta " + this.TipoConta + " | ";
             retorno += "Nome " + this.Nome + " | ";
             retorno += "Saldo " + this.Saldo + " | ";
             retorno += "Crédito " + this.Credito + " | ";
-			retorno += "Conta " + this.NumConta + " | ";
+			
 			return retorno;
 		}
 	}

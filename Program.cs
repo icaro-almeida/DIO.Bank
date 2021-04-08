@@ -17,8 +17,8 @@ namespace DIO.Bank
 		//Soluciona problema de diretório variável entre "dotnet run", vscode e visual studio
 		static string diretorioBase = AppDomain.CurrentDomain.BaseDirectory; //https://jeremybytes.blogspot.com/2020/02/set-working-directory-in-visual-studio.html
 
-		static string pathListClientes = diretorioBase + "listClientes.dat";
-		static string pathListOperadores = diretorioBase + "listOperadores.dat";
+		static string pathListClientes = diretorioBase + "dados\\listClientes.dat";
+		static string pathListOperadores = diretorioBase + "dados\\listOperadores.dat";
 
 		static Operador operadorLogado = null;
 
@@ -34,7 +34,7 @@ namespace DIO.Bank
 				ArmazenaDados.SaveList(pathListOperadores, listOperadores);
 			}		
 
-			//Exibe menus
+			//Exibe menus até que usuário escolha S para Sair
 			do
             {
 				operadorLogado = Operador.ExecutaLoginOperador(listOperadores);
@@ -44,9 +44,10 @@ namespace DIO.Bank
 			ArmazenaDados.SaveList(pathListClientes, listClientes);
 			ArmazenaDados.SaveList(pathListOperadores, listOperadores);
 
-			//mantém console aberto até que pressionem uma tecla:
-			Console.ReadLine();
-		}      
+			////mantém console aberto até que pressionem uma tecla:
+			//Console.ReadLine();
+
+		}
 
         /// <summary>
         /// Carrega dados de clientes e operadores
@@ -56,31 +57,23 @@ namespace DIO.Bank
 			//Carrega lista de clientes/contas
 			listClientes = ArmazenaDados.LoadList<Cliente>(pathListClientes);
 			if (listClientes.Count == 0)
-			{
-				string msg = "Não foi possível carregar a lista de contas!";
-				Console.WriteLine(msg);
-				logger.Error(msg);
+			{				
+				logger.Error("Não foi possível carregar a lista de contas!");
 			}
 			else
-			{
-				string msg = "Lista de contas carregada com sucesso!";
-				Console.WriteLine(msg);
-				logger.Info(msg);
+			{				
+				logger.Info("Lista de contas carregada com sucesso!");
 			}
 
 			//carrega lista de operadores
 			listOperadores = ArmazenaDados.LoadList<Operador>(pathListOperadores);
 			if (listOperadores.Count == 0)
 			{
-				string msg = "Não foi possível carregar a lista de operadores!";
-				Console.WriteLine(msg);
-				logger.Error(msg);
+				logger.Error("Não foi possível carregar a lista de operadores!");
 			}
 			else
-			{
-				string msg = "Lista de operadores carregada com sucesso!";
-				Console.WriteLine(msg);
-				logger.Info(msg);
+			{				
+				logger.Info("Lista de operadores carregada com sucesso!");
 			}
 
 		}
@@ -218,35 +211,30 @@ namespace DIO.Bank
 				return;
 			}
 
-			listClientes.Remove(cliente);
-			string msg = $"Conta {numConta} removida com sucesso!";
-			Console.WriteLine(msg);
-			logger.Info(msg);
+			listClientes.Remove(cliente);			
+			logger.Info($"Conta [{numConta}] removida com sucesso!");
 		}
 
+		/// <summary>
+		/// Solicita dados e deposita valor
+		/// </summary>
         private static void Depositar()
-		{
-			//todo alterar para pedeconta e busaca
-			Console.Write("Digite o número da conta: ");
-			int numConta = int.Parse(Console.ReadLine());
-
-			if (Cliente.BuscaConta(listClientes, numConta) == null)
+		{			
+			Cliente objCliente = Cliente.PedeContaEBuscaCliente(listClientes);
+			if (objCliente == null)
 			{
-				Console.WriteLine($"Conta [{numConta}] inexistente!");
 				return;
 			}
 
 			Console.Write("Digite o valor a ser depositado: ");
 			double valorDeposito = double.Parse(Console.ReadLine());
 
-			listClientes[numConta].Depositar(valorDeposito);
-			string msg = $"Depósito de {valorDeposito} na conta {numConta} realizado com sucesso!";
-			Console.WriteLine(msg);
-			logger.Info(msg);
+			objCliente.Depositar(valorDeposito);
+			logger.Info($"Depósito de {valorDeposito} na conta [{objCliente.NumConta}] realizado com sucesso!");
 		}
 
 		/// <summary>
-		/// Realiza saque
+		/// Solicita dados e realiza saque
 		/// </summary>
 		private static void Sacar()
 		{
@@ -266,22 +254,19 @@ namespace DIO.Bank
 			{
 				logger.Info($"Saque de {valorSaque} realizado na conta {objConta.NumConta}");
 			}
-
 		}
 
 		private static void Transferir()
 		{			
 			Cliente clienteOrigem = Cliente.PedeContaEBuscaCliente(listClientes, "Digite o número da conta de origem: ");
 			if (clienteOrigem == null)
-			{
-				Console.WriteLine("Conta de origem não encontrada!");
+			{				
 				return;
 			}
 
 			Cliente clienteDestino = Cliente.PedeContaEBuscaCliente(listClientes, "Digite o número da conta de destino: ");
 			if (clienteDestino == null)
-			{
-				Console.WriteLine("Conta de destino não encontrada!");
+			{				
 				return;
 			}
 
@@ -289,9 +274,12 @@ namespace DIO.Bank
 			double valorTransferencia = double.Parse(Console.ReadLine());
 
 			Console.Write("Digite a senha: ");
-			string senha = Console.ReadLine();			
+			string senha = Console.ReadLine();
 
-			clienteOrigem.Transferir(senha, valorTransferencia, clienteDestino);
+            if (clienteOrigem.Transferir(senha, valorTransferencia, clienteDestino))
+            {
+				logger.Info($"Transferência de {valorTransferencia} realizada de conta [{clienteOrigem.NumConta}] para [{clienteDestino.NumConta}]");
+			}
 		}
 
 		/// <summary>
@@ -348,9 +336,12 @@ namespace DIO.Bank
 			logger.Info("Nova Conta Adicionada: " + novaConta.ToString());
 		}
 
+		/// <summary>
+		/// Lista contas em ListClientes
+		/// </summary>
 		private static void ListarContas()
 		{
-			Console.WriteLine("Listar contas");
+			Console.WriteLine("Listar contas:");
 
 			if (listClientes.Count == 0)
 			{
@@ -361,11 +352,14 @@ namespace DIO.Bank
 			for (int i = 0; i < listClientes.Count; i++)
 			{
 				Cliente conta = listClientes[i];
-				Console.Write("#{0} - ", i);
 				Console.WriteLine(conta);
 			}
 		}
 
+		/// <summary>
+		/// Retorna string com linha, método e arquivo de onde for chamado
+		/// </summary>
+		/// <returns></returns>
 		static string GetCallerLineAndFile(
 			[CallerLineNumber] int lineNumber = 0,
 			[CallerMemberName] string caller = null,
