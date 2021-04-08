@@ -256,6 +256,9 @@ namespace DIO.Bank
 			}
 		}
 
+		/// <summary>
+		/// Solicita dados e executa transferência entre contas
+		/// </summary>
 		private static void Transferir()
 		{			
 			Cliente clienteOrigem = Cliente.PedeContaEBuscaCliente(listClientes, "Digite o número da conta de origem: ");
@@ -332,7 +335,6 @@ namespace DIO.Bank
 			listClientes.Add(novaConta);
 			//salva o arquivo incluindo a nova conta
 			ArmazenaDados.SaveList(pathListClientes, listClientes);
-			//todo adicionar saída para o console
 			logger.Info("Nova Conta Adicionada: " + novaConta.ToString());
 		}
 

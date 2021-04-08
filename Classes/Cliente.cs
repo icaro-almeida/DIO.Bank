@@ -24,6 +24,12 @@ namespace DIO.Bank
 			this.NumConta = pNumConta;			
 		}
 
+		/// <summary>
+		/// Valida e executa saque
+		/// </summary>
+		/// <param name="pValorSaque">Valor a ser sacado</param>
+		/// <param name="pSenha">Senha digitada pelo cliente para autorização da operação</param>
+		/// <returns></returns>
 		public bool Sacar(double pValorSaque, string pSenha)
 		{
             // Validação de saldo suficiente
@@ -42,21 +48,20 @@ namespace DIO.Bank
 			//executa retirada
             this.Saldo -= pValorSaque;
 
-			//todo alterar mensagem abaixo
 			//Exibe saldo atual
-			Console.WriteLine($"Conta número {this.NumConta} de {this.Nome}");
-			Console.WriteLine($"Saldo atual: {this.Saldo}");
+			Console.WriteLine($"Conta [{this.NumConta}] - Saldo atual: {this.Saldo}");
             // https://docs.microsoft.com/pt-br/dotnet/standard/base-types/composite-formatting
 
             return true;
 		}
 
+		/// <summary>
+		/// Insere dinheiro na conta do cliente
+		/// </summary>
+		/// <param name="valorDeposito"></param>
 		public void Depositar(double valorDeposito)
 		{
-			this.Saldo += valorDeposito;
-
-			//todo remover esta mensagem e adicionar fora daqui. deixar aqui msg de depósito realizado.
-            Console.WriteLine("Saldo atual da conta de {0} é {1}", this.Nome, this.Saldo);
+			this.Saldo += valorDeposito;			
 		}
 
         public bool Transferir(string pSenha, double valorTransferencia, Cliente contaDestino)
