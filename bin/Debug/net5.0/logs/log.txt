@@ -39,3 +39,23 @@
  Info|2021-04-08 02:48:19.3239|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
  Info|2021-04-08 02:48:51.0402|Caller:DIO.Bank.Program.InserirConta|Msg:Conta Criada: Conta [2] | TipoConta PessoaFisica | Nome Talita | Saldo 134143 | Crédito 135135 | 
  Info|2021-04-08 02:49:36.9818|Caller:DIO.Bank.Program.InserirConta|Msg:Conta Criada: Conta [3] | TipoConta PessoaFisica | Nome Nathália | Saldo 13 | Crédito 2452542 | 
+ Info|2021-04-08 15:29:01.4462|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 15:29:01.5526|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 15:36:37.7061|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 15:36:37.7948|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 15:36:58.2778|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 111 na conta [0] realizado com sucesso!
+ Info|2021-04-08 15:37:14.9235|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 23 na conta [2] realizado com sucesso!
+ Info|2021-04-08 15:37:36.7183|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 16164 na conta [3] realizado com sucesso!
+ Info|2021-04-08 15:51:39.1728|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 15:51:39.2596|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 15:52:01.3822|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 0 na conta [0], de ícaro, realizado com sucesso!
+ Info|2021-04-08 15:53:05.5412|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 15:53:05.6100|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 15:53:14.6389|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 1 na conta [0], de ícaro, realizado com sucesso!
+ Info|2021-04-08 15:57:22.2281|Caller:DIO.Bank.Program.Sacar|Msg:Saque de 12 realizado na conta 0
+ Info|2021-04-08 15:58:46.5754|Caller:DIO.Bank.Program.Transferir|Msg:Transferência de 222 realizada de conta [1] para [0]
+ Info|2021-04-08 15:59:32.0476|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 15:59:32.1533|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 15:59:40.3874|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 161 na conta [0], de ícaro, realizado com sucesso!
+ Info|2021-04-08 15:59:48.4947|Caller:DIO.Bank.Program.Sacar|Msg:Saque de 222 realizado na conta 0
+ Info|2021-04-08 16:00:17.4689|Caller:DIO.Bank.Program.Transferir|Msg:Transferência de 233 realizada de conta [1] para [2]

@@ -8,13 +8,13 @@ namespace DIO.Bank
     [Serializable]
     public class Cliente : Usuario
     {
-        // Atributos
+        // Attributes
         private TipoConta TipoConta { get; set; }
         private double Saldo { get; set; }
         private double Credito { get; set; }
         public int NumConta { get; set; }
 
-        // Métodos
+        // Methods
         public Cliente(TipoConta pTipoConta, double pSaldo, double pCredito, string pNome,
          int pNumConta, string pSenha) : base(pNome, pSenha)
         {
@@ -86,7 +86,7 @@ namespace DIO.Bank
                 if (pVerboseForAvailability)
                     Console.WriteLine($"Conta [{pConta}] já cadastrada!");
                 else
-                    Console.WriteLine($"Conta [{pConta}] encontrada!");
+                    Console.WriteLine($"Conta [{pConta}] encontrada: {resultsList[0].Nome}");
                 return resultsList[0];
             }
             else

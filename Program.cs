@@ -228,17 +228,16 @@ namespace DIO.Bank
         /// </summary>
         private static void Depositar()
         {
-            Cliente objCliente = Cliente.PedeContaEBuscaCliente(listClientes);
+            Cliente objCliente = Cliente.PedeContaEBuscaCliente(pListClientes: listClientes, pVerboseForAvailability: false);
             if (objCliente == null)
             {
                 return;
             }
 
-            Console.Write("Digite o valor a ser depositado: ");
-            double valorDeposito = double.Parse(Console.ReadLine());
+            double valorDeposito = PedeEvalidaDouble("Digite o valor a ser depositado: ");            
 
             objCliente.Depositar(valorDeposito);
-            logger.Info($"Depósito de {valorDeposito} na conta [{objCliente.NumConta}] realizado com sucesso!");
+            logger.Info($"Depósito de {valorDeposito} na conta [{objCliente.NumConta}], de {objCliente.Nome}, realizado com sucesso!");
         }
 
         /// <summary>
@@ -246,7 +245,7 @@ namespace DIO.Bank
         /// </summary>
         private static void Sacar()
         {
-            Cliente objConta = Cliente.PedeContaEBuscaCliente(listClientes);
+            Cliente objConta = Cliente.PedeContaEBuscaCliente(listClientes, pVerboseForAvailability: false);
             if (objConta == null)
             {
                 return;
@@ -269,13 +268,13 @@ namespace DIO.Bank
         /// </summary>
         private static void Transferir()
         {
-            Cliente clienteOrigem = Cliente.PedeContaEBuscaCliente(listClientes, "Digite o número da conta de origem: ");
+            Cliente clienteOrigem = Cliente.PedeContaEBuscaCliente(listClientes, "Digite o número da conta de origem: ", false);
             if (clienteOrigem == null)
             {
                 return;
             }
 
-            Cliente clienteDestino = Cliente.PedeContaEBuscaCliente(listClientes, "Digite o número da conta de destino: ");
+            Cliente clienteDestino = Cliente.PedeContaEBuscaCliente(listClientes, "Digite o número da conta de destino: ", false);
             if (clienteDestino == null)
             {
                 return;
@@ -377,6 +376,32 @@ namespace DIO.Bank
             return entradaDoUsuario;
         }
 
+        /// <summary>
+        /// Solicita ao usuário e valida uma entrada numérica int
+        /// </summary>
+        /// <param name="pMsg"></param>
+        /// <returns></returns>
+        public static double PedeEvalidaInteger(string pMsg)
+        {
+            bool isInputOk = false;
+            int entradaDoUsuario = 0;
+            while (!isInputOk)
+            {
+                try
+                {
+                    Console.WriteLine(pMsg);
+                    entradaDoUsuario = int.Parse(Console.ReadLine());
+                    isInputOk = true;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Digite apenas números!");
+                    isInputOk = false;
+                }
+            }
+            return entradaDoUsuario;
+        }
+
 
         /// <summary>
         /// Lista contas em ListClientes
@@ -399,7 +424,7 @@ namespace DIO.Bank
         }
 
         /// <summary>
-        /// Retorna string com linha, método e arquivo de onde for chamado
+        /// Retorna string com linha, caller e arquivo de onde for chamado
         /// </summary>
         /// <returns></returns>
         static string GetCallerLineAndFile(
