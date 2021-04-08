@@ -75,12 +75,6 @@ namespace DIO.Bank
             return false;
         }
 
-        ///<summary>Busca objeto na lista Conta por agência e conta</summary>
-        internal static Cliente BuscaConta(List<Cliente> pListContas, int pConta, bool pVerboseForAvailability = true)
-        {
-            
-        }
-
         internal static Cliente PedeContaEBuscaCliente(List<Cliente> pListClientes, string pMsg = "Digite o número da conta: ", bool pVerboseForAvailability = true)
         {
             Console.Write(pMsg);
