@@ -1,0 +1,37 @@
+ Info|2021-04-07 20:09:33.3805|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-07 20:09:33.5598|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Error|2021-04-07 20:13:26.3037|Caller:DIO.Bank.Program.CarregaDados|Msg:Não foi possível carregar a lista de contas!
+ Error|2021-04-07 20:13:26.3979|Caller:DIO.Bank.Program.CarregaDados|Msg:Não foi possível carregar a lista de operadores!
+ Info|2021-04-07 20:14:30.0778|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-07 20:14:30.1729|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-07 20:15:22.5533|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-07 20:15:22.6387|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-07 20:15:59.9941|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-07 20:16:00.1584|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-07 20:20:18.2875|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-07 20:20:18.3958|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-07 20:24:34.3772|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-07 20:24:34.5079|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-07 20:24:51.2385|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-07 20:24:51.3373|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-07 20:25:03.7108|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-07 20:25:03.8145|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-07 20:30:18.3069|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-07 20:30:18.4117|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-07 20:30:33.1685|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-07 20:30:33.3030|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-07 20:35:59.5615|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-07 20:35:59.6905|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-07 20:56:33.6541|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-07 20:56:33.7960|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-07 22:52:45.4562|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-07 22:52:45.5548|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-07 23:03:13.8136|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-07 23:03:13.8908|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-07 23:04:04.8726|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-07 23:04:04.9217|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-07 23:04:21.5839|Caller:DIO.Bank.Program.ExcluirConta|Msg:Conta [23] removida com sucesso!
+ Info|2021-04-07 23:04:54.4916|Caller:DIO.Bank.Program.ExcluirConta|Msg:Conta [1] removida com sucesso!
+ Info|2021-04-07 23:05:33.8434|Caller:DIO.Bank.Program.InserirConta|Msg:Nova Conta Adicionada: Conta [0] | TipoConta PessoaFisica | Nome Ícaro Rocha de Almeida | Saldo 1200 | Crédito 1300 | 
+ Info|2021-04-07 23:06:01.9636|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-07 23:06:02.0085|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!

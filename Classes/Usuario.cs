@@ -35,10 +35,23 @@ namespace DIO.Bank
 			this.Senha = Password.GenerateSaltedHash(pSenha, this.Salt);
 		}
 
-		public void AlteraSenha(string pSenha)
+		/// <summary>
+		/// Verifica senha antiga inserida e troca pela senha nova
+		/// </summary>
+		/// <param name="pSenhaAntiga"></param>
+		/// <param name="pSenhaNova"></param>
+		/// <returns></returns>
+		public bool AlteraSenha(string pSenhaAntiga, string pSenhaNova)
         {
-			this.Senha = Password.GenerateSaltedHash(pSenha, this.Salt);
+			if (!Password.CompararSenhas(pSenhaAntiga, this.Salt, this.Senha))
+			{
+				Console.WriteLine("Senha incorreta!");
+				return false;
+			}
+
+			this.Senha = Password.GenerateSaltedHash(pSenhaNova, this.Salt);
+			return true;
 		}
 
-	}
-}
+	}//fim da classe
+}// fim do namespace

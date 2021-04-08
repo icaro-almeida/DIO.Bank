@@ -23,7 +23,7 @@ namespace DIO.Bank
 		static Operador operadorLogado = null;
 
 		static void Main(string[] args)
-		{			
+		{
 			CarregaDados();
 
 			//Cria usuário admin caso não encontre arquivo de operadores
@@ -38,7 +38,7 @@ namespace DIO.Bank
 			do
             {
 				operadorLogado = Operador.ExecutaLoginOperador(listOperadores);
-			} while (ExibeMenu1() != "S");	
+			} while (ExibeMenu1() != "S");
 
 			//Salva dados de contas e operadores antes de encerrar:
 			ArmazenaDados.SaveList(pathListClientes, listClientes);
@@ -116,14 +116,20 @@ namespace DIO.Bank
 						case "1":
 							isValidOption = true;
 							Depositar();
+							//Salva alterações no arquivo de clientes;
+							ArmazenaDados.SaveList(pathListClientes, listClientes);
 							break;
 						case "2":
 							isValidOption = true;
 							Sacar();
+							//Salva alterações no arquivo de clientes;
+							ArmazenaDados.SaveList(pathListClientes, listClientes);
 							break;
 						case "3":
 							isValidOption = true;
 							Transferir();
+							//Salva alterações no arquivo de clientes;
+							ArmazenaDados.SaveList(pathListClientes, listClientes);
 							break;
 						case "A":
 							isValidOption = true;
@@ -132,17 +138,21 @@ namespace DIO.Bank
 						case "B":
 							isValidOption = true;
 							InserirConta();
+							//Salva alterações no arquivo de clientes;
+							ArmazenaDados.SaveList(pathListClientes, listClientes);
 							break;
 						case "C":
 							isValidOption = true;
 							ExcluirConta();
+							//Salva alterações no arquivo de clientes;
+							ArmazenaDados.SaveList(pathListClientes, listClientes);
 							break;
 						case "D":
 							isValidOption = true;
 							AlterarSenhaDeConta();
+							//Salva alterações no arquivo de clientes;
+							ArmazenaDados.SaveList(pathListClientes, listClientes);
 							break;
-
-
 						case "L":
 							isValidOption = true;
 							Console.Clear();
@@ -162,6 +172,9 @@ namespace DIO.Bank
 			return opcaoUsuario;
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
         private static void AlterarSenhaDeConta()
         {
 			Cliente objCliente = Cliente.PedeContaEBuscaCliente(listClientes);
@@ -171,48 +184,43 @@ namespace DIO.Bank
 			}
 
 			Console.Write("Digite a senha atual: ");
-			string senha = Console.ReadLine();
+			string senhaAntiga = Console.ReadLine();
 			//Validação de senha
-			if (!Password.CompararSenhas(senha, objCliente.Salt, objCliente.Senha))
+			if (!Password.CompararSenhas(senhaAntiga, objCliente.Salt, objCliente.Senha))
 			{
 				Console.WriteLine("Senha incorreta!");
 				return;
 			}
 
 			Console.Write("Crie a nova senha com 6 dígitos numéricos: ");
-			String entradaSenha = Console.ReadLine();
+			String senhaNova = Console.ReadLine();
 
-			while (!Password.ValidaRegraSenha(entradaSenha))
+			while (!Password.ValidaRegraSenha(senhaNova))
 			{
 				Console.WriteLine("Por favor, insira uma senha numérica de 6 dígitos.");
-				entradaSenha = Console.ReadLine();
+				senhaNova = Console.ReadLine();
 			}
 
-			objCliente.AlteraSenha(entradaSenha);
-
-			string msg = $"Senha da conta {objCliente.NumConta} alterada com sucesso!";
-			Console.WriteLine(msg);
-			logger.Info(msg);
-		}
+			if(objCliente.AlteraSenha(senhaAntiga, senhaNova))            
+				logger.Info($"Senha da conta {objCliente.NumConta} alterada com sucesso!");
+		}//fim AlterarSenhaDeConta()
 
 		/// <summary>
 		/// Solicita dados e exclui conta da ListClientes
 		/// </summary>
-        private static void ExcluirConta()
-        {
-			int numConta;
-			Console.WriteLine("Digite o número da conta a ser excluída: ");
-			numConta = int.Parse(Console.ReadLine());
-			Cliente cliente;
-
-            if ((cliente = Cliente.BuscaConta(listClientes, numConta)) == null)
-            {
-				Console.WriteLine($"Conta [{numConta}] inexistente!");				
+		private static void ExcluirConta()
+        {			
+			Cliente cliente = null;
+			if ((cliente = Cliente.PedeContaEBuscaCliente(pListClientes: listClientes,
+															pMsg: "Digite o número da conta a ser excluída: ",
+															pVerboseForAvailability: false))
+															== null)
+            {				
 				return;
 			}
 
-			listClientes.Remove(cliente);			
-			logger.Info($"Conta [{numConta}] removida com sucesso!");
+			if (listClientes.Remove(cliente))	
+				logger.Info($"Conta [{cliente.NumConta}] removida com sucesso!");
 		}
 
 		/// <summary>
@@ -297,15 +305,18 @@ namespace DIO.Bank
 
 			int entradaNumeroConta = 0;
 			bool contaDisponivel = false;
-            do
+			Cliente cliente = null;
+			do
             {
 				contaDisponivel = true;
-				Console.Write("Insira o número desejado para a conta: ");
-				entradaNumeroConta = int.Parse(Console.ReadLine());
-				if(Cliente.BuscaConta(listClientes, entradaNumeroConta) != null)                
+				if ((cliente = Cliente.PedeContaEBuscaCliente(pListClientes: listClientes,
+															pMsg: "Insira o número desejado para a conta: ",
+															pVerboseForAvailability: true))
+															!= null)
+				{
 					contaDisponivel = false;
-			} while (contaDisponivel == false);
-			
+				}
+			} while (contaDisponivel == false);		
 
 			Console.Write("Digite o Nome do Cliente: ");
 			string entradaNome = Console.ReadLine();			
@@ -335,7 +346,7 @@ namespace DIO.Bank
 			listClientes.Add(novaConta);
 			//salva o arquivo incluindo a nova conta
 			ArmazenaDados.SaveList(pathListClientes, listClientes);
-			logger.Info("Nova Conta Adicionada: " + novaConta.ToString());
+			logger.Info("Conta Criada: " + novaConta.ToString());
 		}
 
 		/// <summary>
