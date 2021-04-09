@@ -28,6 +28,12 @@ namespace DIO.Bank
             {
                 AppDomain.CurrentDomain.ProcessExit += new EventHandler(CurrentDomain_ProcessExit);
 
+                AppDomain.CurrentDomain.FirstChanceException += (sender, eventArgs) =>
+                {
+                    //https://stackify.com/csharp-exception-handling-best-practices/
+                    logger.Warn(eventArgs.Exception.ToString());
+                };
+
                 CarregaDados();
 
                 //Cria usuário admin caso não encontre arquivo de operadores
