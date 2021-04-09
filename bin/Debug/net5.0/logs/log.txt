@@ -31,3 +31,8 @@
  Info|2021-04-09 18:59:28.5678|Caller:DIO.Bank.Program.ExcluirConta|Msg:Conta [6] removida com sucesso!
  Info|2021-04-09 18:59:51.0492|Caller:DIO.Bank.Program.ExcluirConta|Msg:Conta [5] removida com sucesso!
  Info|2021-04-09 19:00:54.3788|Caller:DIO.Bank.Program.AlterarSenhaDeConta|Msg:Senha da conta 1 alterada com sucesso!
+ Info|2021-04-09 20:08:07.4922|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-09 20:08:07.5867|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-09 20:08:12.2412|Caller:DIO.Bank.Program.Main|Msg:Operador [admin] logado com sucesso!
+ Info|2021-04-09 20:08:23.9385|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-09 20:08:24.4292|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!

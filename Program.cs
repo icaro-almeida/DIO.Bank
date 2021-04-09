@@ -26,6 +26,8 @@ namespace DIO.Bank
         {
             try
             {
+                AppDomain.CurrentDomain.ProcessExit += new EventHandler(CurrentDomain_ProcessExit);
+
                 CarregaDados();
 
                 //Cria usuário admin caso não encontre arquivo de operadores
@@ -45,17 +47,34 @@ namespace DIO.Bank
                         logger.Info($"Operador [{operadorLogado.Nome}] logado com sucesso!");
                 } while (ExibeMenu1() != "S");
 
-                //Salva dados de contas e operadores antes de encerrar:
-                ArmazenaDados.SaveList(pathListClientes, listClientes);
-                ArmazenaDados.SaveList(pathListOperadores, listOperadores);
-
                 ////mantém console aberto até que pressionem uma tecla:
                 //Console.ReadLine();
             }
             catch (Exception ex)
             {
-                logger.Error(ex.Message);  
+                logger.Error(ex.Message);
             }
+        }
+
+        /// <summary>
+        /// Event handler for Process Exit
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        static void CurrentDomain_ProcessExit(object sender, EventArgs e)
+        {
+            try
+            {
+                logger.Info("Saindo...");
+                //Salva dados de contas e operadores antes de encerrar:
+                ArmazenaDados.SaveList(pathListClientes, listClientes);
+                ArmazenaDados.SaveList(pathListOperadores, listOperadores);
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex.Message);
+            }
+            
         }
 
         /// <summary>
@@ -220,7 +239,7 @@ namespace DIO.Bank
                 ArmazenaDados.SaveList(pathListClientes, listClientes);
                 logger.Info($"Senha da conta [{objCliente.NumConta} - {objCliente.Nome} ] alterada com sucesso!");
             }
-                
+
         }//fim AlterarSenhaDeConta()
 
         /// <summary>
