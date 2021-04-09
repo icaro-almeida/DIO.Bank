@@ -1,0 +1,61 @@
+ Info|2021-04-08 00:06:46.0544|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 00:06:46.2738|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 00:08:09.4957|Caller:DIO.Bank.Program.InserirConta|Msg:Conta Criada: Conta [1] | TipoConta PessoaFisica | Nome Poliana | Saldo 656 | Crédito 415 | 
+ Info|2021-04-08 00:51:13.1108|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 00:51:13.5741|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 01:00:31.9576|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 01:00:32.0961|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 01:00:59.5424|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 01:00:59.6277|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 01:02:27.5906|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 01:02:27.6911|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 01:02:54.1704|Caller:DIO.Bank.Program.ExcluirConta|Msg:Conta [1] removida com sucesso!
+ Info|2021-04-08 01:40:04.0901|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 01:40:04.1882|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 01:56:02.5258|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 01:56:02.6057|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 01:56:40.7663|Caller:DIO.Bank.Program.InserirConta|Msg:Conta Criada: Conta [0] | TipoConta PessoaFisica | Nome Poliana | Saldo 134134 | Crédito 236123 | 
+ Info|2021-04-08 01:57:14.4100|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 01:57:14.4695|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 01:59:03.7245|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 01:59:03.8155|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 02:01:34.4424|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 02:01:34.5296|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Error|2021-04-08 02:02:50.4646|Caller:DIO.Bank.Program.CarregaDados|Msg:Não foi possível carregar a lista de contas!
+ Info|2021-04-08 02:02:50.9955|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 02:03:31.2898|Caller:DIO.Bank.Program.InserirConta|Msg:Conta Criada: Conta [0] | TipoConta PessoaFisica | Nome Ícaro | Saldo 3426134 | Crédito 12351 | 
+ Info|2021-04-08 02:03:54.9922|Caller:DIO.Bank.Program.InserirConta|Msg:Conta Criada: Conta [0] | TipoConta PessoaFisica | Nome Poliana | Saldo 134 | Crédito 315135 | 
+ Info|2021-04-08 02:39:11.4029|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 02:39:11.4832|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Error|2021-04-08 02:39:46.8020|Caller:DIO.Bank.Program.CarregaDados|Msg:Não foi possível carregar a lista de contas!
+ Info|2021-04-08 02:39:46.9228|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 02:40:09.0091|Caller:DIO.Bank.Program.InserirConta|Msg:Conta Criada: Conta [0] | TipoConta PessoaFisica | Nome ícaro | Saldo 13413 | Crédito 134134 | 
+ Info|2021-04-08 02:43:29.2577|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 02:43:29.3206|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 02:45:49.6984|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 02:45:49.8102|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 02:46:31.8629|Caller:DIO.Bank.Program.InserirConta|Msg:Conta Criada: Conta [1] | TipoConta PessoaFisica | Nome Poliana | Saldo 131 | Crédito 135315 | 
+ Info|2021-04-08 02:48:19.2548|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 02:48:19.3239|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 02:48:51.0402|Caller:DIO.Bank.Program.InserirConta|Msg:Conta Criada: Conta [2] | TipoConta PessoaFisica | Nome Talita | Saldo 134143 | Crédito 135135 | 
+ Info|2021-04-08 02:49:36.9818|Caller:DIO.Bank.Program.InserirConta|Msg:Conta Criada: Conta [3] | TipoConta PessoaFisica | Nome Nathália | Saldo 13 | Crédito 2452542 | 
+ Info|2021-04-08 15:29:01.4462|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 15:29:01.5526|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 15:36:37.7061|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 15:36:37.7948|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 15:36:58.2778|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 111 na conta [0] realizado com sucesso!
+ Info|2021-04-08 15:37:14.9235|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 23 na conta [2] realizado com sucesso!
+ Info|2021-04-08 15:37:36.7183|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 16164 na conta [3] realizado com sucesso!
+ Info|2021-04-08 15:51:39.1728|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 15:51:39.2596|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 15:52:01.3822|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 0 na conta [0], de ícaro, realizado com sucesso!
+ Info|2021-04-08 15:53:05.5412|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 15:53:05.6100|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 15:53:14.6389|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 1 na conta [0], de ícaro, realizado com sucesso!
+ Info|2021-04-08 15:57:22.2281|Caller:DIO.Bank.Program.Sacar|Msg:Saque de 12 realizado na conta 0
+ Info|2021-04-08 15:58:46.5754|Caller:DIO.Bank.Program.Transferir|Msg:Transferência de 222 realizada de conta [1] para [0]
+ Info|2021-04-08 15:59:32.0476|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-08 15:59:32.1533|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-08 15:59:40.3874|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 161 na conta [0], de ícaro, realizado com sucesso!
+ Info|2021-04-08 15:59:48.4947|Caller:DIO.Bank.Program.Sacar|Msg:Saque de 222 realizado na conta 0
+ Info|2021-04-08 16:00:17.4689|Caller:DIO.Bank.Program.Transferir|Msg:Transferência de 233 realizada de conta [1] para [2]
