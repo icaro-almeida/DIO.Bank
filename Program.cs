@@ -14,7 +14,6 @@ namespace DIO.Bank
         static List<Operador> listOperadores = new List<Operador>();
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
-
         //Soluciona problema de diretório variável entre "dotnet run", vscode e visual studio
         static string diretorioBase = AppDomain.CurrentDomain.BaseDirectory; //https://jeremybytes.blogspot.com/2020/02/set-working-directory-in-visual-studio.html
 
@@ -28,11 +27,6 @@ namespace DIO.Bank
             try
             {
                 AppDomain.CurrentDomain.ProcessExit += new EventHandler(CurrentDomain_ProcessExit);
-
-                AppDomain.CurrentDomain.FirstChanceException += (sender, eventArgs) =>
-                {
-                    logger.Warn(eventArgs.Exception.ToString());
-                };
 
                 CarregaDados();
 

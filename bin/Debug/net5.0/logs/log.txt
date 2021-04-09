@@ -36,18 +36,3 @@
  Info|2021-04-09 20:08:12.2412|Caller:DIO.Bank.Program.Main|Msg:Operador [admin] logado com sucesso!
  Info|2021-04-09 20:08:23.9385|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
  Info|2021-04-09 20:08:24.4292|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
- Info|2021-04-09 20:15:07.0787|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
- Info|2021-04-09 20:15:07.2192|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
- Info|2021-04-09 20:15:12.7022|Caller:DIO.Bank.Program.Main|Msg:Operador [admin] logado com sucesso!
- Info|2021-04-09 20:15:30.7906|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
- Info|2021-04-09 20:33:04.6941|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
- Info|2021-04-09 20:33:04.8336|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
- Info|2021-04-09 20:33:25.4839|Caller:DIO.Bank.Program.Main|Msg:Operador [admin] logado com sucesso!
- Warn|2021-04-09 20:33:37.8788|Caller:DIO.Bank.Program+<>c.<Main>b__7_0|Msg:System.FormatException: Input string was not in a correct format.
-   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
- Warn|2021-04-09 20:34:20.4827|Caller:DIO.Bank.Program+<>c.<Main>b__7_0|Msg:System.FormatException: Input string was not in a correct format.
-   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
- Warn|2021-04-09 20:35:07.0922|Caller:DIO.Bank.Program+<>c.<Main>b__7_0|Msg:System.FormatException: Input string was not in a correct format.
-   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
- Info|2021-04-09 20:35:33.0604|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 123 na conta [1 - Poliana] realizado com sucesso!
- Info|2021-04-09 20:35:49.0039|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
