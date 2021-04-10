@@ -493,7 +493,7 @@ namespace DIO.Bank
                 logger.Error(ex);
                 return "";
             }
-        }
+        }        
 
     }//fim do programa
 }//fim do namespace

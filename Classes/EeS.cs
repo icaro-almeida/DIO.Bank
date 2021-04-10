@@ -65,5 +65,20 @@ namespace DIO.Bank
             return entradaDoUsuario;
         }
 
+        /// <summary>
+        /// Executes Console.ReadLine() and exits if "quit" or "sair" is typed
+        /// </summary>
+        /// <returns>User's console input</returns>
+        public static string ReadConsoleLine()
+        {
+            string input = null;
+            input = Console.ReadLine().ToUpper();
+            if (input.Equals("QUIT") || input.Equals("SAIR"))
+            {
+                Environment.Exit(0);
+            }
+            return input;
+        }
+
     }
 }
