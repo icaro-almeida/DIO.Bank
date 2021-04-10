@@ -78,15 +78,14 @@ namespace DIO.Bank
             }
             catch (Exception ex)
             {
-                logger.Error(ex.Message);
+                logger.Error(ex);
             }
-            
         }
 
         /// <summary>
         /// Carrega dados de clientes e operadores
         /// </summary>
-        public static void CarregaDados()
+        private static void CarregaDados()
         {
             try
             {
@@ -114,7 +113,7 @@ namespace DIO.Bank
             }
             catch (Exception ex)
             {
-                logger.Error("Erro ao carregar arquivos: " + ex.Message);
+                logger.Error("Erro ao carregar arquivos: " + ex);
             }
 
         }
@@ -213,37 +212,44 @@ namespace DIO.Bank
         /// </summary>
         private static void AlterarSenhaDeConta()
         {
-            Console.WriteLine("Alterar Senha De Conta");
-
-            Cliente objCliente = Cliente.PedeContaEBuscaCliente(listClientes, pVerboseForAvailability: false);
-            if (objCliente == null)
+            try
             {
-                return;
+                Console.WriteLine("Alterar Senha De Conta");
+
+                Cliente objCliente = Cliente.PedeContaEBuscaCliente(listClientes, pVerboseForAvailability: false);
+                if (objCliente == null)
+                {
+                    return;
+                }
+
+                Console.Write("Digite a senha atual: ");
+                string senhaAntiga = Console.ReadLine();
+                //Validação de senha
+                if (!Password.CompararSenhas(senhaAntiga, objCliente.Salt, objCliente.Senha))
+                {
+                    Console.WriteLine("Senha incorreta!");
+                    return;
+                }
+
+                Console.Write("Crie a nova senha com 6 dígitos numéricos: ");
+                String senhaNova = Console.ReadLine();
+
+                while (!Password.ValidaRegraSenha(senhaNova))
+                {
+                    Console.WriteLine("Por favor, insira uma senha numérica de 6 dígitos.");
+                    senhaNova = Console.ReadLine();
+                }
+
+                if (objCliente.AlteraSenha(senhaAntiga, senhaNova))
+                {
+                    //salva o arquivo incluindo a nova conta
+                    ArmazenaDados.SaveList(pathListClientes, listClientes);
+                    logger.Info($"Senha da conta [{objCliente.NumConta} - {objCliente.Nome} ] alterada com sucesso!");
+                }
             }
-
-            Console.Write("Digite a senha atual: ");
-            string senhaAntiga = Console.ReadLine();
-            //Validação de senha
-            if (!Password.CompararSenhas(senhaAntiga, objCliente.Salt, objCliente.Senha))
+            catch (Exception ex)
             {
-                Console.WriteLine("Senha incorreta!");
-                return;
-            }
-
-            Console.Write("Crie a nova senha com 6 dígitos numéricos: ");
-            String senhaNova = Console.ReadLine();
-
-            while (!Password.ValidaRegraSenha(senhaNova))
-            {
-                Console.WriteLine("Por favor, insira uma senha numérica de 6 dígitos.");
-                senhaNova = Console.ReadLine();
-            }
-
-            if (objCliente.AlteraSenha(senhaAntiga, senhaNova))
-            {
-                //salva o arquivo incluindo a nova conta
-                ArmazenaDados.SaveList(pathListClientes, listClientes);
-                logger.Info($"Senha da conta [{objCliente.NumConta} - {objCliente.Nome} ] alterada com sucesso!");
+                logger.Error(ex);
             }
 
         }//fim AlterarSenhaDeConta()
@@ -253,21 +259,28 @@ namespace DIO.Bank
         /// </summary>
         private static void ExcluirConta()
         {
-            Console.WriteLine("Excluir Conta");
-            Cliente cliente = null;
-            if ((cliente = Cliente.PedeContaEBuscaCliente(pListClientes: listClientes,
-                                                            pMsg: "Digite o número da conta a ser excluída: ",
-                                                            pVerboseForAvailability: false))
-                                                            == null)
+            try
             {
-                return;
-            }
+                Console.WriteLine("Excluir Conta");
+                Cliente cliente = null;
+                if ((cliente = Cliente.PedeContaEBuscaCliente(pListClientes: listClientes,
+                                                                pMsg: "Digite o número da conta a ser excluída: ",
+                                                                pVerboseForAvailability: false))
+                                                                == null)
+                {
+                    return;
+                }
 
-            if (listClientes.Remove(cliente))
+                if (listClientes.Remove(cliente))
+                {
+                    //salva o arquivo incluindo a nova conta
+                    ArmazenaDados.SaveList(pathListClientes, listClientes);
+                    logger.Info($"Conta [{cliente.NumConta}] removida com sucesso!");
+                }
+            }
+            catch (Exception ex)
             {
-                //salva o arquivo incluindo a nova conta
-                ArmazenaDados.SaveList(pathListClientes, listClientes);
-                logger.Info($"Conta [{cliente.NumConta}] removida com sucesso!");
+                logger.Error(ex);
             }
         }
 
@@ -276,20 +289,28 @@ namespace DIO.Bank
         /// </summary>
         private static void Depositar()
         {
-            Console.WriteLine("Depositar");
-
-            Cliente objCliente = Cliente.PedeContaEBuscaCliente(pListClientes: listClientes, pVerboseForAvailability: false);
-            if (objCliente == null)
+            try
             {
-                return;
+                Console.WriteLine("Depositar");
+
+                Cliente objCliente = Cliente.PedeContaEBuscaCliente(pListClientes: listClientes, pVerboseForAvailability: false);
+                if (objCliente == null)
+                {
+                    return;
+                }
+
+                double valorDeposito = EeS.PedeEvalidaDouble("Digite o valor a ser depositado: ");
+
+                objCliente.Depositar(valorDeposito);
+                //salva o arquivo incluindo a nova conta
+                ArmazenaDados.SaveList(pathListClientes, listClientes);
+                logger.Info($"Depósito de {valorDeposito} na conta [{objCliente.NumConta} - {objCliente.Nome}] realizado com sucesso!");
+
             }
-
-            double valorDeposito = EeS.PedeEvalidaDouble("Digite o valor a ser depositado: ");
-
-            objCliente.Depositar(valorDeposito);
-            //salva o arquivo incluindo a nova conta
-            ArmazenaDados.SaveList(pathListClientes, listClientes);
-            logger.Info($"Depósito de {valorDeposito} na conta [{objCliente.NumConta} - {objCliente.Nome}] realizado com sucesso!");
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
         }
 
         /// <summary>
@@ -297,24 +318,31 @@ namespace DIO.Bank
         /// </summary>
         private static void Sacar()
         {
-            Console.WriteLine("Sacar");
-            Cliente objConta = Cliente.PedeContaEBuscaCliente(listClientes, pVerboseForAvailability: false);
-            if (objConta == null)
+            try
             {
-                return;
+                Console.WriteLine("Sacar");
+                Cliente objConta = Cliente.PedeContaEBuscaCliente(listClientes, pVerboseForAvailability: false);
+                if (objConta == null)
+                {
+                    return;
+                }
+
+                Console.Write("Digite o valor a ser sacado: ");
+                double valorSaque = double.Parse(Console.ReadLine());
+
+                Console.Write("Digite a senha: ");
+                string senha = Console.ReadLine();
+
+                if (objConta.Sacar(valorSaque, senha))
+                {
+                    //salva o arquivo incluindo a nova conta
+                    ArmazenaDados.SaveList(pathListClientes, listClientes);
+                    logger.Info($"Saque de {valorSaque} realizado na conta [{objConta.NumConta} - {objConta.Nome}]");
+                }
             }
-
-            Console.Write("Digite o valor a ser sacado: ");
-            double valorSaque = double.Parse(Console.ReadLine());
-
-            Console.Write("Digite a senha: ");
-            string senha = Console.ReadLine();
-
-            if (objConta.Sacar(valorSaque, senha))
+            catch (Exception ex)
             {
-                //salva o arquivo incluindo a nova conta
-                ArmazenaDados.SaveList(pathListClientes, listClientes);
-                logger.Info($"Saque de {valorSaque} realizado na conta [{objConta.NumConta} - {objConta.Nome}]");
+                logger.Error(ex);
             }
         }
 
@@ -323,29 +351,36 @@ namespace DIO.Bank
         /// </summary>
         private static void Transferir()
         {
-            Console.WriteLine("Transferir");
-            Cliente clienteOrigem = Cliente.PedeContaEBuscaCliente(listClientes, "Digite o número da conta de origem: ", false);
-            if (clienteOrigem == null)
+            try
             {
-                return;
+                Console.WriteLine("Transferir");
+                Cliente clienteOrigem = Cliente.PedeContaEBuscaCliente(listClientes, "Digite o número da conta de origem: ", false);
+                if (clienteOrigem == null)
+                {
+                    return;
+                }
+
+                Cliente clienteDestino = Cliente.PedeContaEBuscaCliente(listClientes, "Digite o número da conta de destino: ", false);
+                if (clienteDestino == null)
+                {
+                    return;
+                }
+
+                double valorTransferencia = EeS.PedeEvalidaDouble("Digite o valor a ser transferido: ");
+
+                Console.Write("Digite a senha: ");
+                string senha = Console.ReadLine();
+
+                if (clienteOrigem.Transferir(senha, valorTransferencia, clienteDestino))
+                {
+                    //salva o arquivo incluindo a nova conta
+                    ArmazenaDados.SaveList(pathListClientes, listClientes);
+                    logger.Info($"Transferência de {valorTransferencia} realizada de conta [{clienteOrigem.NumConta} - {clienteOrigem.Nome}] para a conta [{clienteDestino.NumConta} - {clienteDestino.Nome}]");
+                }
             }
-
-            Cliente clienteDestino = Cliente.PedeContaEBuscaCliente(listClientes, "Digite o número da conta de destino: ", false);
-            if (clienteDestino == null)
+            catch (Exception ex)
             {
-                return;
-            }
-
-            double valorTransferencia = EeS.PedeEvalidaDouble("Digite o valor a ser transferido: ");
-
-            Console.Write("Digite a senha: ");
-            string senha = Console.ReadLine();
-
-            if (clienteOrigem.Transferir(senha, valorTransferencia, clienteDestino))
-            {
-                //salva o arquivo incluindo a nova conta
-                ArmazenaDados.SaveList(pathListClientes, listClientes);
-                logger.Info($"Transferência de {valorTransferencia} realizada de conta [{clienteOrigem.NumConta} - {clienteOrigem.Nome}] para a conta [{clienteDestino.NumConta} - {clienteDestino.Nome}]");
+                logger.Error(ex);
             }
         }
 
@@ -354,54 +389,61 @@ namespace DIO.Bank
         /// </summary>
         private static void InserirConta()
         {
-            Console.WriteLine("Inserir nova conta");
-
-            int entradaTipoConta = EeS.PedeEvalidaInteger("Digite 1 para Conta Física ou 2 para Jurídica: ");
-
-            int entradaNumeroConta = EeS.PedeEvalidaInteger("Insira o número desejado para a conta: ");
-
-            bool contaDisponivel = false;
-            Cliente cliente = null;
-            do
+            try
             {
-                contaDisponivel = true;
-                if ((cliente = Cliente.BuscaConta(pListContas: listClientes,
-                                                            entradaNumeroConta,
-                                                            pVerboseForAvailability: true))
-                                                            != null)
+                Console.WriteLine("Inserir nova conta");
+
+                int entradaTipoConta = EeS.PedeEvalidaInteger("Digite 1 para Conta Física ou 2 para Jurídica: ");
+
+                int entradaNumeroConta = EeS.PedeEvalidaInteger("Insira o número desejado para a conta: ");
+
+                bool contaDisponivel = false;
+                Cliente cliente = null;
+                do
                 {
-                    contaDisponivel = false;
-                    entradaNumeroConta = EeS.PedeEvalidaInteger("Insira outro número para a conta: ");
+                    contaDisponivel = true;
+                    if ((cliente = Cliente.BuscaConta(pListContas: listClientes,
+                                                                entradaNumeroConta,
+                                                                pVerboseForAvailability: true))
+                                                                != null)
+                    {
+                        contaDisponivel = false;
+                        entradaNumeroConta = EeS.PedeEvalidaInteger("Insira outro número para a conta: ");
+                    }
+                } while (contaDisponivel == false);
+
+                Console.Write("Digite o Nome do Cliente: ");
+                string entradaNome = Console.ReadLine();
+
+                double entradaSaldo = EeS.PedeEvalidaDouble("Digite o saldo inicial: ");
+
+                double entradaCredito = EeS.PedeEvalidaDouble("Digite o crédito concedido: ");
+
+                Console.Write("Crie a senha com 6 dígitos numéricos: ");
+                String entradaSenha = Console.ReadLine();
+
+                while (!Password.ValidaRegraSenha(entradaSenha))
+                {
+                    Console.WriteLine("Por favor, insira uma senha numérica de 6 dígitos.");
+                    entradaSenha = Console.ReadLine();
                 }
-            } while (contaDisponivel == false);
 
-            Console.Write("Digite o Nome do Cliente: ");
-            string entradaNome = Console.ReadLine();
+                Cliente novaConta = new Cliente(pTipoConta: (TipoConta)entradaTipoConta,
+                                            pSaldo: entradaSaldo,
+                                            pCredito: entradaCredito,
+                                            pNome: entradaNome,
+                                            pNumConta: entradaNumeroConta,
+                                            pSenha: entradaSenha);
 
-            double entradaSaldo = EeS.PedeEvalidaDouble("Digite o saldo inicial: ");
-
-            double entradaCredito = EeS.PedeEvalidaDouble("Digite o crédito concedido: ");
-
-            Console.Write("Crie a senha com 6 dígitos numéricos: ");
-            String entradaSenha = Console.ReadLine();
-
-            while (!Password.ValidaRegraSenha(entradaSenha))
-            {
-                Console.WriteLine("Por favor, insira uma senha numérica de 6 dígitos.");
-                entradaSenha = Console.ReadLine();
+                listClientes.Add(novaConta);
+                //salva o arquivo incluindo a nova conta
+                ArmazenaDados.SaveList(pathListClientes, listClientes);
+                logger.Info("Conta Criada: " + novaConta.ToString());
             }
-
-            Cliente novaConta = new Cliente(pTipoConta: (TipoConta)entradaTipoConta,
-                                        pSaldo: entradaSaldo,
-                                        pCredito: entradaCredito,
-                                        pNome: entradaNome,
-                                        pNumConta: entradaNumeroConta,
-                                        pSenha: entradaSenha);
-
-            listClientes.Add(novaConta);
-            //salva o arquivo incluindo a nova conta
-            ArmazenaDados.SaveList(pathListClientes, listClientes);
-            logger.Info("Conta Criada: " + novaConta.ToString());
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
         }
 
         /// <summary>
@@ -409,18 +451,25 @@ namespace DIO.Bank
         /// </summary>
         private static void ListarContas()
         {
-            Console.WriteLine("Listar contas:");
-
-            if (listClientes.Count == 0)
+            try
             {
-                Console.WriteLine("Nenhuma conta cadastrada.");
-                return;
+                Console.WriteLine("Listar contas:");
+
+                if (listClientes.Count == 0)
+                {
+                    Console.WriteLine("Nenhuma conta cadastrada.");
+                    return;
+                }
+
+                for (int i = 0; i < listClientes.Count; i++)
+                {
+                    Cliente conta = listClientes[i];
+                    Console.WriteLine(conta);
+                }
             }
-
-            for (int i = 0; i < listClientes.Count; i++)
+            catch (Exception ex)
             {
-                Cliente conta = listClientes[i];
-                Console.WriteLine(conta);
+                logger.Error(ex);
             }
         }
 
@@ -433,9 +482,17 @@ namespace DIO.Bank
             [CallerMemberName] string caller = null,
             [CallerFilePath] string filePath = null)
         {
-            string[] fileSplit = filePath.Split("\\");
-            string fileName = fileSplit[fileSplit.Length - 1];
-            return lineNumber + "|" + caller + "|" + fileName + "|";
+            try
+            {
+                string[] fileSplit = filePath.Split("\\");
+                string fileName = fileSplit[fileSplit.Length - 1];
+                return lineNumber + "|" + caller + "|" + fileName + "|";
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+                return "";
+            }
         }
 
     }//fim do programa
