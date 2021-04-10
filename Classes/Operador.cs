@@ -89,7 +89,13 @@ namespace DIO.Bank
             Console.WriteLine($"Operador [{this.Nome}], insira a senha: ");
             string senha = EeS.ReadConsoleLine();
 
-            return Password.CompararSenhas(senha, this.Salt, this.Senha);
+            bool senhasConferem = false;
+            if (!(senhasConferem = Password.CompararSenhas(senha, this.Salt, this.Senha)))
+            {
+                Console.WriteLine("Senha incorreta!");
+            }
+
+            return senhasConferem;
         }
     }//fim da classe
 }

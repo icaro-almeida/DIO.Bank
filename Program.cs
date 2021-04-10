@@ -301,7 +301,10 @@ namespace DIO.Bank
 
                 double valorDeposito = EeS.PedeEvalidaDouble("Digite o valor a ser depositado: ");
 
-                operadorLogado.SolicitarSenha();
+                if (!operadorLogado.SolicitarSenha())
+                {                    
+                    return;
+                }
 
                 objCliente.Depositar(valorDeposito);
                 //salva o arquivo incluindo a nova conta

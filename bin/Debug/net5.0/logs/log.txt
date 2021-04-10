@@ -18,3 +18,13 @@
  Info|2021-04-10 03:40:09.2188|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
  Info|2021-04-10 03:40:20.9611|Caller:DIO.Bank.Program.Main|Msg:Operador [admin] logado com sucesso!
  Info|2021-04-10 03:40:24.7196|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-10 03:43:55.1376|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-10 03:43:55.3834|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-10 03:44:01.2401|Caller:DIO.Bank.Program.Main|Msg:Operador [admin] logado com sucesso!
+ Info|2021-04-10 03:45:02.0775|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 2 na conta [1 - Poliana] realizado com sucesso!
+ Info|2021-04-10 03:45:39.2229|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-10 03:48:55.4833|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-10 03:48:55.6315|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-10 03:49:00.5621|Caller:DIO.Bank.Program.Main|Msg:Operador [admin] logado com sucesso!
+ Info|2021-04-10 03:49:25.7346|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 313 na conta [2 - Talita] realizado com sucesso!
+ Info|2021-04-10 03:49:27.9496|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
