@@ -186,6 +186,14 @@ namespace DIO.Bank
                                 isValidOption = true;
                                 InserirOperador();
                                 break;
+                            case "F":
+                                isValidOption = true;
+                                ExcluirOperador();
+                                break;
+                            case "G":
+                                isValidOption = true;
+                                //AlterarSenhaDeOperador();
+                                break;
 
 
                             case "L":
@@ -210,6 +218,52 @@ namespace DIO.Bank
             {
                 logger.Error(ex.Message);
                 return "";
+            }
+        }
+
+        /// <summary>
+        /// solicita dados e exclui operador
+        /// </summary>
+        private static void ExcluirOperador()
+        {
+            try
+            {
+                Console.WriteLine("Excluir Conta");
+                Operador operador = null;
+
+                Console.WriteLine("Digite o usuário a ser excluído: ");
+                string entradaUsuario = EeS.ReadConsoleLine();
+
+                if (operadorLogado.Usuario.Equals(entradaUsuario))
+                {
+                    Console.WriteLine("Você não pode excluir a si mesmo.");
+                    //todo incluir logoff automático em caso se autoexclusao
+                    return;
+                }
+
+                if ((operador = Operador.BuscaOperador(pListOperadores: listOperadores,
+                                                            pUsuario: entradaUsuario,
+                                                            pVerboseForAvailability: false))
+                                                            == null)
+                {
+                    return;
+                }
+
+                if (!operadorLogado.SolicitarSenha())
+                {
+                    return;
+                }
+
+                if (listOperadores.Remove(operador))
+                {
+                    //salva o arquivo incluindo o novo operador
+                    ArmazenaDados.SaveList(pathListOperadores, listOperadores);
+                    logger.Info($"Operador [{operador.Usuario}] removido com sucesso!");
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
 

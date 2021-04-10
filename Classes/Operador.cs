@@ -10,7 +10,7 @@ namespace DIO.Bank
     class Operador : Usuario
     {
 
-        private string Usuario { get; set; }
+        public string Usuario { get; private set; }
 
         /// <summary>
         /// Construtor da classe Operador
@@ -23,7 +23,13 @@ namespace DIO.Bank
             this.Usuario = pUsuario;
         }
 
-        ///<summary>Busca objeto na lista Conta por agência e conta</summary>
+        /// <summary>
+        /// Busca operador na lista por usuário
+        /// </summary>
+        /// <param name="pListOperadores"></param>
+        /// <param name="pUsuario"></param>
+        /// <param name="pVerboseForAvailability"></param>
+        /// <returns>True se o operador foi encontrado</returns>
         internal static Operador BuscaOperador(List<Operador> pListOperadores, string pUsuario, bool pVerboseForAvailability = false)
         {
             List<Operador> resultsList = pListOperadores.FindAll(x => (x.Usuario == pUsuario));

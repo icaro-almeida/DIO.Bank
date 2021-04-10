@@ -42,3 +42,16 @@
  Info|2021-04-10 04:05:42.4120|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
  Info|2021-04-10 04:05:53.1368|Caller:DIO.Bank.Program.Main|Msg:Operador [Ícaro] logado com sucesso!
  Info|2021-04-10 04:05:58.6769|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-10 04:08:59.3272|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-10 04:08:59.6640|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-10 04:09:05.3803|Caller:DIO.Bank.Program.Main|Msg:Operador [Ícaro] logado com sucesso!
+ Info|2021-04-10 04:09:24.4306|Caller:DIO.Bank.Program.InserirOperador|Msg:Operador Criado: Usuário [poliana] | Nome Poliana | 
+ Info|2021-04-10 04:09:39.0159|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-10 04:23:01.9651|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-10 04:23:15.2535|Caller:DIO.Bank.Program.Main|Msg:Operador [admin] logado com sucesso!
+ Info|2021-04-10 04:23:43.8511|Caller:DIO.Bank.Program.ExcluirOperador|Msg:Operador [icaroralmeida] removido com sucesso!
+ Info|2021-04-10 04:23:48.0473|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-10 04:26:43.3043|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-10 04:26:43.4434|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-10 04:26:46.2696|Caller:DIO.Bank.Program.Main|Msg:Operador [admin] logado com sucesso!
+ Info|2021-04-10 04:26:57.8458|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
