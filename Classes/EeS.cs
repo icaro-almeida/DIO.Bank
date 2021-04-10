@@ -72,8 +72,8 @@ namespace DIO.Bank
         public static string ReadConsoleLine()
         {
             string input = null;
-            input = Console.ReadLine().ToUpper();
-            if (input.Equals("QUIT") || input.Equals("SAIR"))
+            input = Console.ReadLine();
+            if (input.ToUpper().Equals("QUIT") || input.ToUpper().Equals("SAIR"))
             {
                 Environment.Exit(0);
             }
