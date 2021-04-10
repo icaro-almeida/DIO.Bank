@@ -73,7 +73,8 @@ namespace DIO.Bank
         {
             string input = null;
             input = Console.ReadLine();
-            if (input.ToUpper().Equals("QUIT") || input.ToUpper().Equals("SAIR"))
+            if (input.ToUpper().Equals("SAIR") || input.ToUpper().Equals("EXIT") || 
+                input.ToUpper().Equals("FECHAR") || input.ToUpper().Equals("QUIT"))
             {
                 Environment.Exit(0);
             }

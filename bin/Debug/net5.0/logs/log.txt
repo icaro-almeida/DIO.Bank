@@ -1,85 +1,12 @@
- Info|2021-04-09 18:06:23.7295|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
- Info|2021-04-09 18:06:24.0556|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
- Info|2021-04-09 18:13:11.8181|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
- Info|2021-04-09 18:13:12.0082|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
- Info|2021-04-09 18:15:00.4629|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 1212 na conta [1], de Poliana, realizado com sucesso!
- Info|2021-04-09 18:16:38.1827|Caller:DIO.Bank.Program.Sacar|Msg:Saque de 12 realizado na conta 1
- Error|2021-04-09 18:17:27.0558|Caller:DIO.Bank.Program.ExibeMenu1|Msg:Input string was not in a correct format.
- Info|2021-04-09 18:25:57.0134|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
- Info|2021-04-09 18:25:57.1409|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
- Info|2021-04-09 18:28:04.4845|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 23 na conta [1], de Poliana, realizado com sucesso!
- Info|2021-04-09 18:28:24.3076|Caller:DIO.Bank.Program.Sacar|Msg:Saque de 22 realizado na conta 1
- Info|2021-04-09 18:31:36.9239|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 222 na conta [1], de Poliana, realizado com sucesso!
- Info|2021-04-09 18:32:04.4196|Caller:DIO.Bank.Program.Sacar|Msg:Saque de 13 realizado na conta 3
- Info|2021-04-09 18:45:42.0516|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
- Info|2021-04-09 18:45:42.1602|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
- Info|2021-04-09 18:50:42.2690|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
- Info|2021-04-09 18:50:42.3813|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
- Info|2021-04-09 18:50:46.1751|Caller:DIO.Bank.Operador.ExecutaLoginOperador|Msg:Operador [admin] logado com sucesso!
- Info|2021-04-09 18:51:53.5611|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
- Info|2021-04-09 18:51:53.7315|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
- Info|2021-04-09 18:51:56.1930|Caller:DIO.Bank.Operador.ExecutaLoginOperador|Msg:Operador [admin] logado com sucesso!
- Info|2021-04-09 18:52:13.1892|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 225555 na conta [1 - Poliana] realizado com sucesso!
- Info|2021-04-09 18:52:46.5451|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 2 na conta [1 - Poliana] realizado com sucesso!
- Info|2021-04-09 18:53:01.4143|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 25419 na conta [2 - Talita] realizado com sucesso!
- Info|2021-04-09 18:53:36.2836|Caller:DIO.Bank.Program.Sacar|Msg:Saque de 156 realizado na conta [2 - Talita]
- Info|2021-04-09 18:54:12.2463|Caller:DIO.Bank.Program.Sacar|Msg:Saque de 1316 realizado na conta [2 - Talita]
- Info|2021-04-09 18:56:25.7452|Caller:DIO.Bank.Program.Transferir|Msg:Transferência de 1561 realizada de conta [1 - Poliana] para a conta [2 - Talita]
- Info|2021-04-09 18:58:02.5941|Caller:DIO.Bank.Program.InserirConta|Msg:Conta Criada: Conta [4] | TipoConta PessoaJuridica | Nome Americanas | Saldo 99999999 | Crédito 1000000000 | 
- Info|2021-04-09 18:58:34.1209|Caller:DIO.Bank.Program.InserirConta|Msg:Conta Criada: Conta [5] | TipoConta PessoaJuridica | Nome Almar | Saldo 156266 | Crédito 166666 | 
- Info|2021-04-09 18:59:06.3456|Caller:DIO.Bank.Program.InserirConta|Msg:Conta Criada: Conta [6] | TipoConta PessoaJuridica | Nome Del Rei | Saldo 222222 | Crédito 1651616 | 
- Info|2021-04-09 18:59:28.5678|Caller:DIO.Bank.Program.ExcluirConta|Msg:Conta [6] removida com sucesso!
- Info|2021-04-09 18:59:51.0492|Caller:DIO.Bank.Program.ExcluirConta|Msg:Conta [5] removida com sucesso!
- Info|2021-04-09 19:00:54.3788|Caller:DIO.Bank.Program.AlterarSenhaDeConta|Msg:Senha da conta 1 alterada com sucesso!
- Info|2021-04-09 20:08:07.4922|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
- Info|2021-04-09 20:08:07.5867|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
- Info|2021-04-09 20:08:12.2412|Caller:DIO.Bank.Program.Main|Msg:Operador [admin] logado com sucesso!
- Info|2021-04-09 20:08:23.9385|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
- Info|2021-04-09 20:08:24.4292|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
- 
- Info|2021-04-09 20:15:07.0787|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
- Info|2021-04-09 20:15:07.2192|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
- Info|2021-04-09 20:15:12.7022|Caller:DIO.Bank.Program.Main|Msg:Operador [admin] logado com sucesso!
- Info|2021-04-09 20:15:30.7906|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
- Info|2021-04-09 20:33:04.6941|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
- Info|2021-04-09 20:33:04.8336|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
- Info|2021-04-09 20:33:25.4839|Caller:DIO.Bank.Program.Main|Msg:Operador [admin] logado com sucesso!
- Warn|2021-04-09 20:33:37.8788|Caller:DIO.Bank.Program+<>c.<Main>b__7_0|Msg:System.FormatException: Input string was not in a correct format.
-   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
- Warn|2021-04-09 20:34:20.4827|Caller:DIO.Bank.Program+<>c.<Main>b__7_0|Msg:System.FormatException: Input string was not in a correct format.
-   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
- Warn|2021-04-09 20:35:07.0922|Caller:DIO.Bank.Program+<>c.<Main>b__7_0|Msg:System.FormatException: Input string was not in a correct format.
-   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
- Info|2021-04-09 20:35:33.0604|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 123 na conta [1 - Poliana] realizado com sucesso!
- Info|2021-04-09 20:35:49.0039|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
- 
- Info|2021-04-09 20:40:18.8453|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
- Info|2021-04-09 20:40:18.9920|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
- Info|2021-04-09 20:40:22.4870|Caller:DIO.Bank.Program.Main|Msg:Operador [admin] logado com sucesso!
- Info|2021-04-09 20:40:52.3716|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
- Info|2021-04-09 22:51:46.9805|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
- Info|2021-04-09 22:51:47.2100|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
- Info|2021-04-09 22:52:00.4006|Caller:DIO.Bank.Program.Main|Msg:Operador [admin] logado com sucesso!
- Warn|2021-04-09 22:52:39.4491|Caller:DIO.Bank.Program+<>c.<Main>b__7_0|Msg:System.FormatException: Input string was not in a correct format.
-   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
- Warn|2021-04-09 22:52:58.6456|Caller:DIO.Bank.Program+<>c.<Main>b__7_0|Msg:System.FormatException: Input string was not in a correct format.
-   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
- Info|2021-04-09 22:54:23.8310|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 2 na conta [3 - Nathália] realizado com sucesso!
- Info|2021-04-09 22:54:27.1718|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
- Info|2021-04-09 22:59:48.6927|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
- Info|2021-04-09 22:59:48.8145|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
- Info|2021-04-09 23:07:36.6910|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
- Info|2021-04-09 23:07:36.7983|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
- Info|2021-04-09 23:07:38.1506|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
- Info|2021-04-09 23:18:24.7474|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
- Info|2021-04-09 23:18:25.2882|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
- Info|2021-04-09 23:18:29.7819|Caller:DIO.Bank.Program.Main|Msg:Operador [admin] logado com sucesso!
- Info|2021-04-09 23:18:33.7750|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
- Info|2021-04-09 23:31:30.9843|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
- Info|2021-04-09 23:31:31.1373|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
- Info|2021-04-09 23:31:34.7246|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
- Info|2021-04-09 23:31:56.1781|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
- Info|2021-04-09 23:31:56.3106|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
- Info|2021-04-09 23:31:59.1029|Caller:DIO.Bank.Program.Main|Msg:Operador [admin] logado com sucesso!
- Info|2021-04-09 23:32:19.0655|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 222 na conta [1 - Poliana] realizado com sucesso!
- Info|2021-04-09 23:32:23.1036|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-10 01:12:40.1804|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-10 01:12:40.3863|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-10 01:12:42.0152|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-10 01:12:51.4008|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-10 01:12:51.4928|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-10 01:12:53.2534|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-10 01:13:02.4760|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-10 01:13:02.5986|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-10 01:13:03.7095|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-10 01:13:11.8607|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-10 01:13:12.0294|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-10 01:13:13.5403|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...

@@ -4,11 +4,15 @@
 
 Projeto de sistema para operador de caixa bancário com funcionalidades de saque, transferência, depósito
 
+##Usuário padrão: admin Senha: admin
+##Para sair a qualquer momento digite "sair", "fechar", "exit" ou "quit", ou feche a janela. Os dados serão salvos normalmente.
+
 -Uso de herança, onde as classes Cliente e Operador herdam da classe Usuario;
 -Persistência dos cadastros através da classe ArmazenaDados com BinnaryFormatter.Serialize (Obsoleto);
 -Armazenamento de senhas usando hash e salt (gerido pela classe criada "Password");
 -Logging através da plataforma NLog;
--Classe EeS de validação de entradas e saídas do usuário.
+-Classe EeS de validação de entradas do usuário.
+-Uso de event handler no encerramento do programa para salvar os dados de usuários.
 
 
 ## Contato
