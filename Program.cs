@@ -181,7 +181,7 @@ namespace DIO.Bank
                             case "D":
                                 isValidOption = true;
                                 AlterarSenhaDeConta();
-                                break;
+                                break;     
                             case "L":
                                 isValidOption = true;
                                 Console.Clear();
@@ -240,7 +240,7 @@ namespace DIO.Bank
                     senhaNova = EeS.ReadConsoleLine();
                 }
 
-                if (objCliente.AlteraSenha(senhaAntiga, senhaNova))
+                if (objCliente.AlterarSenha(senhaAntiga, senhaNova))
                 {
                     //salva o arquivo incluindo a nova conta
                     ArmazenaDados.SaveList(pathListClientes, listClientes);
@@ -402,7 +402,7 @@ namespace DIO.Bank
                 do
                 {
                     contaDisponivel = true;
-                    if ((cliente = Cliente.BuscaConta(pListContas: listClientes,
+                    if ((cliente = Cliente.BuscaCliente(pListContas: listClientes,
                                                                 entradaNumeroConta,
                                                                 pVerboseForAvailability: true))
                                                                 != null)

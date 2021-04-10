@@ -41,7 +41,7 @@ namespace DIO.Bank
 		/// <param name="pSenhaAntiga"></param>
 		/// <param name="pSenhaNova"></param>
 		/// <returns></returns>
-		public bool AlteraSenha(string pSenhaAntiga, string pSenhaNova)
+		public bool AlterarSenha(string pSenhaAntiga, string pSenhaNova)
         {
 			if (!Password.CompararSenhas(pSenhaAntiga, this.Salt, this.Senha))
 			{

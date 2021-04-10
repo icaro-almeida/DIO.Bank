@@ -76,7 +76,7 @@ namespace DIO.Bank
         }
 
         ///<summary>Busca objeto na lista Conta por agência e conta</summary>
-        internal static Cliente BuscaConta(List<Cliente> pListContas, int pConta, bool pVerboseForAvailability = false)
+        internal static Cliente BuscaCliente(List<Cliente> pListContas, int pConta, bool pVerboseForAvailability = false)
         {
             //List<Conta> resultsList = pListContas.FindAll(x => (x.NumConta == pConta) && (x.NumAgencia == pAgencia));		
             List<Cliente> resultsList = pListContas.FindAll(x => (x.NumConta == pConta));
@@ -105,7 +105,7 @@ namespace DIO.Bank
         {           
             int conta = EeS.PedeEvalidaInteger(pMsg);
 
-            return Cliente.BuscaConta(pListClientes, conta, pVerboseForAvailability);
+            return Cliente.BuscaCliente(pListClientes, conta, pVerboseForAvailability);
         }
 
         public override string ToString()
