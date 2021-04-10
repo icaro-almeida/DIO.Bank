@@ -142,12 +142,14 @@ namespace DIO.Bank
                         Console.WriteLine("C- Excluir conta");
                         Console.WriteLine("D- Alterar senha de conta");
                         Console.WriteLine();
-                        Console.WriteLine("E- Inserir Operador");
-                        Console.WriteLine("F- Remover Operador");
-                        Console.WriteLine("G- Alterar senha do Operador");
+                        Console.WriteLine("E- Listar operadores");
+                        Console.WriteLine("F- Inserir Operador");
+                        Console.WriteLine("G- Remover Operador");
+                        Console.WriteLine("H- Alterar senha do Operador");
                         Console.WriteLine();
                         Console.WriteLine("L- Limpar Tela");
                         Console.WriteLine("S- Sair");
+                        //todo implementar menu com setas
 
                         Console.WriteLine();
                         opcaoUsuario = EeS.ReadConsoleLine().ToUpper();
@@ -182,15 +184,20 @@ namespace DIO.Bank
                                 isValidOption = true;
                                 AlterarSenhaDeConta();
                                 break;
+
                             case "E":
                                 isValidOption = true;
-                                InserirOperador();
+                                ListarOperadores();
                                 break;
                             case "F":
                                 isValidOption = true;
-                                ExcluirOperador();
+                                InserirOperador();
                                 break;
                             case "G":
+                                isValidOption = true;
+                                ExcluirOperador();
+                                break;
+                            case "H":
                                 isValidOption = true;
                                 AlterarSenhaDoOperador();
                                 break;
@@ -218,6 +225,30 @@ namespace DIO.Bank
             {
                 logger.Error(ex.Message);
                 return "";
+            }
+        }
+
+        private static void ListarOperadores()
+        {
+            try
+            {
+                Console.WriteLine("Listar operadores:");
+
+                if (listOperadores.Count == 0)
+                {
+                    Console.WriteLine("Nenhum operador cadastrado.");
+                    return;
+                }
+
+                for (int i = 0; i < listOperadores.Count; i++)
+                {
+                    Operador operador = listOperadores[i];
+                    Console.WriteLine(operador);
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
 

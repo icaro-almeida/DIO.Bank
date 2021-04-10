@@ -70,3 +70,11 @@
  Info|2021-04-10 04:48:41.8135|Caller:DIO.Bank.Program.Main|Msg:Operador [Ícaro] logado com sucesso!
  Info|2021-04-10 04:49:01.7902|Caller:DIO.Bank.Program.AlterarSenhaDoOperador|Msg:Senha do operador [icaroralmeida - Ícaro ] alterada com sucesso!
  Info|2021-04-10 04:49:03.1558|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-10 04:53:58.8595|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-10 04:53:59.0322|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-10 04:54:05.5585|Caller:DIO.Bank.Program.Main|Msg:Operador [Ícaro] logado com sucesso!
+ Info|2021-04-10 04:54:20.8462|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-10 04:55:29.6281|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-10 04:55:29.9725|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-10 04:55:34.2661|Caller:DIO.Bank.Program.Main|Msg:Operador [Poliana] logado com sucesso!
+ Info|2021-04-10 04:55:48.5995|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
