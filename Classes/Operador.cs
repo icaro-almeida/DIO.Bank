@@ -52,7 +52,7 @@ namespace DIO.Bank
                 Console.WriteLine();
                 Console.WriteLine("---- LOGIN DO OPERADOR ----");
                 Console.Write("Usuário: ");
-                user = Console.ReadLine();
+                user = EeS.ReadConsoleLine();
                 operador = Operador.BuscaOperador(pListOperadores, user);
             } while (operador == null);
 
@@ -65,7 +65,7 @@ namespace DIO.Bank
                     Console.WriteLine("Senha incorreta!");
                 }
                 Console.Write("Senha: ");
-                pass = Console.ReadLine();
+                pass = EeS.ReadConsoleLine();
             } while (!(senhaCorreta = Password.CompararSenhas(pass, operador.Salt, operador.Senha)));
 
             return operador;

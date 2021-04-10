@@ -75,3 +75,11 @@
  Info|2021-04-09 23:18:25.2882|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
  Info|2021-04-09 23:18:29.7819|Caller:DIO.Bank.Program.Main|Msg:Operador [admin] logado com sucesso!
  Info|2021-04-09 23:18:33.7750|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-09 23:31:30.9843|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-09 23:31:31.1373|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-09 23:31:34.7246|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-09 23:31:56.1781|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-09 23:31:56.3106|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-09 23:31:59.1029|Caller:DIO.Bank.Program.Main|Msg:Operador [admin] logado com sucesso!
+ Info|2021-04-09 23:32:19.0655|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 222 na conta [1 - Poliana] realizado com sucesso!
+ Info|2021-04-09 23:32:23.1036|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...

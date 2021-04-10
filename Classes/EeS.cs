@@ -26,7 +26,7 @@ namespace DIO.Bank
                 try
                 {
                     Console.WriteLine(pMsg);
-                    entradaDoUsuario = double.Parse(Console.ReadLine());
+                    entradaDoUsuario = double.Parse(EeS.ReadConsoleLine());
                     isInputOk = true;
                 }
                 catch (Exception)
@@ -53,7 +53,7 @@ namespace DIO.Bank
                 try
                 {
                     Console.WriteLine(pMsg);
-                    entradaDoUsuario = int.Parse(Console.ReadLine());
+                    entradaDoUsuario = int.Parse(EeS.ReadConsoleLine());
                     isInputOk = true;
                 }
                 catch (Exception)
@@ -66,7 +66,7 @@ namespace DIO.Bank
         }
 
         /// <summary>
-        /// Executes Console.ReadLine() and exits if "quit" or "sair" is typed
+        /// Executes EeS.ReadConsoleLine() and exits if "quit" or "sair" is typed
         /// </summary>
         /// <returns>User's console input</returns>
         public static string ReadConsoleLine()

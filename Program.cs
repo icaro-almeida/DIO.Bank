@@ -54,7 +54,7 @@ namespace DIO.Bank
                 } while (ExibeMenu1() != "S");
 
                 ////mantém console aberto até que pressionem uma tecla:
-                //Console.ReadLine();
+                //EeS.ReadConsoleLine();
             }
             catch (Exception ex)
             {
@@ -150,7 +150,7 @@ namespace DIO.Bank
                         Console.WriteLine("S- Sair");
 
                         Console.WriteLine();
-                        opcaoUsuario = Console.ReadLine().ToUpper();
+                        opcaoUsuario = EeS.ReadConsoleLine().ToUpper();
 
                         switch (opcaoUsuario)
                         {
@@ -223,7 +223,7 @@ namespace DIO.Bank
                 }
 
                 Console.Write("Digite a senha atual: ");
-                string senhaAntiga = Console.ReadLine();
+                string senhaAntiga = EeS.ReadConsoleLine();
                 //Validação de senha
                 if (!Password.CompararSenhas(senhaAntiga, objCliente.Salt, objCliente.Senha))
                 {
@@ -232,12 +232,12 @@ namespace DIO.Bank
                 }
 
                 Console.Write("Crie a nova senha com 6 dígitos numéricos: ");
-                String senhaNova = Console.ReadLine();
+                String senhaNova = EeS.ReadConsoleLine();
 
                 while (!Password.ValidaRegraSenha(senhaNova))
                 {
                     Console.WriteLine("Por favor, insira uma senha numérica de 6 dígitos.");
-                    senhaNova = Console.ReadLine();
+                    senhaNova = EeS.ReadConsoleLine();
                 }
 
                 if (objCliente.AlteraSenha(senhaAntiga, senhaNova))
@@ -328,10 +328,10 @@ namespace DIO.Bank
                 }
 
                 Console.Write("Digite o valor a ser sacado: ");
-                double valorSaque = double.Parse(Console.ReadLine());
+                double valorSaque = double.Parse(EeS.ReadConsoleLine());
 
                 Console.Write("Digite a senha: ");
-                string senha = Console.ReadLine();
+                string senha = EeS.ReadConsoleLine();
 
                 if (objConta.Sacar(valorSaque, senha))
                 {
@@ -369,7 +369,7 @@ namespace DIO.Bank
                 double valorTransferencia = EeS.PedeEvalidaDouble("Digite o valor a ser transferido: ");
 
                 Console.Write("Digite a senha: ");
-                string senha = Console.ReadLine();
+                string senha = EeS.ReadConsoleLine();
 
                 if (clienteOrigem.Transferir(senha, valorTransferencia, clienteDestino))
                 {
@@ -413,19 +413,19 @@ namespace DIO.Bank
                 } while (contaDisponivel == false);
 
                 Console.Write("Digite o Nome do Cliente: ");
-                string entradaNome = Console.ReadLine();
+                string entradaNome = EeS.ReadConsoleLine();
 
                 double entradaSaldo = EeS.PedeEvalidaDouble("Digite o saldo inicial: ");
 
                 double entradaCredito = EeS.PedeEvalidaDouble("Digite o crédito concedido: ");
 
                 Console.Write("Crie a senha com 6 dígitos numéricos: ");
-                String entradaSenha = Console.ReadLine();
+                String entradaSenha = EeS.ReadConsoleLine();
 
                 while (!Password.ValidaRegraSenha(entradaSenha))
                 {
                     Console.WriteLine("Por favor, insira uma senha numérica de 6 dígitos.");
-                    entradaSenha = Console.ReadLine();
+                    entradaSenha = EeS.ReadConsoleLine();
                 }
 
                 Cliente novaConta = new Cliente(pTipoConta: (TipoConta)entradaTipoConta,
