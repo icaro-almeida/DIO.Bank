@@ -10,3 +10,11 @@
  Info|2021-04-10 01:13:11.8607|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
  Info|2021-04-10 01:13:12.0294|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
  Info|2021-04-10 01:13:13.5403|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-10 03:05:13.7706|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-10 03:05:14.0239|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-10 03:05:26.7170|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 166 na conta [3 - Nathália] realizado com sucesso!
+ Info|2021-04-10 03:06:23.7928|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-10 03:40:09.0039|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-10 03:40:09.2188|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-10 03:40:20.9611|Caller:DIO.Bank.Program.Main|Msg:Operador [admin] logado com sucesso!
+ Info|2021-04-10 03:40:24.7196|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...

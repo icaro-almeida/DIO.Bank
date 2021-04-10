@@ -181,7 +181,7 @@ namespace DIO.Bank
                             case "D":
                                 isValidOption = true;
                                 AlterarSenhaDeConta();
-                                break;     
+                                break;
                             case "L":
                                 isValidOption = true;
                                 Console.Clear();
@@ -300,6 +300,8 @@ namespace DIO.Bank
                 }
 
                 double valorDeposito = EeS.PedeEvalidaDouble("Digite o valor a ser depositado: ");
+
+                operadorLogado.SolicitarSenha();
 
                 objCliente.Depositar(valorDeposito);
                 //salva o arquivo incluindo a nova conta
@@ -493,7 +495,7 @@ namespace DIO.Bank
                 logger.Error(ex);
                 return "";
             }
-        }        
+        }
 
     }//fim do programa
 }//fim do namespace

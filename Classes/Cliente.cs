@@ -15,6 +15,15 @@ namespace DIO.Bank
         public int NumConta { get; set; }
 
         // Methods
+        /// <summary>
+        /// Construtor da classe Cliente
+        /// </summary>
+        /// <param name="pTipoConta"></param>
+        /// <param name="pSaldo"></param>
+        /// <param name="pCredito"></param>
+        /// <param name="pNome"></param>
+        /// <param name="pNumConta"></param>
+        /// <param name="pSenha"></param>
         public Cliente(TipoConta pTipoConta, double pSaldo, double pCredito, string pNome,
          int pNumConta, string pSenha) : base(pNome, pSenha)
         {
@@ -25,7 +34,7 @@ namespace DIO.Bank
         }
 
         /// <summary>
-        /// Valida e executa saque
+        /// Valida senha, saldo e executa saque
         /// </summary>
         /// <param name="pValorSaque">Valor a ser sacado</param>
         /// <param name="pSenha">Senha digitada pelo cliente para autorização da operação</param>
@@ -65,6 +74,13 @@ namespace DIO.Bank
             this.Saldo += valorDeposito;
         }
 
+        /// <summary>
+        /// Realiza transferência e confere senha
+        /// </summary>
+        /// <param name="pSenha">Senha do cliente para validação da operação</param>
+        /// <param name="valorTransferencia">Valor da transferência</param>
+        /// <param name="contaDestino">Objeto do Cliente de destino</param>
+        /// <returns></returns>
         public bool Transferir(string pSenha, double valorTransferencia, Cliente contaDestino)
         {
             if (this.Sacar(valorTransferencia, pSenha))
@@ -75,7 +91,13 @@ namespace DIO.Bank
             return false;
         }
 
-        ///<summary>Busca objeto na lista Conta por agência e conta</summary>
+        /// <summary>
+        /// Busca e retorna Objeto de Cliente na List a partir do número de conta
+        /// </summary>
+        /// <param name="pListContas"></param>
+        /// <param name="pConta"></param>
+        /// <param name="pVerboseForAvailability"></param>
+        /// <returns></returns>
         internal static Cliente BuscaCliente(List<Cliente> pListContas, int pConta, bool pVerboseForAvailability = false)
         {
             //List<Conta> resultsList = pListContas.FindAll(x => (x.NumConta == pConta) && (x.NumAgencia == pAgencia));		
@@ -98,16 +120,27 @@ namespace DIO.Bank
 
                 return null;
             }
-            
+
         }
 
+        /// <summary>
+        /// Solicita o número da conta e retorna Objeto de Cliente na List
+        /// </summary>
+        /// <param name="pListClientes">List de clientes</param>
+        /// <param name="pMsg">Mensagem a ser exibida solicitando conta</param>
+        /// <param name="pVerboseForAvailability">Exibir mensagens de resultado informando de disponível/indisponível ou encontrada/não encontrada</param>
+        /// <returns></returns>
         internal static Cliente PedeContaEBuscaCliente(List<Cliente> pListClientes, string pMsg = "Digite o número da conta: ", bool pVerboseForAvailability = true)
-        {           
+        {
             int conta = EeS.PedeEvalidaInteger(pMsg);
 
             return Cliente.BuscaCliente(pListClientes, conta, pVerboseForAvailability);
         }
 
+        /// <summary>
+        /// Gera string com os dados do Cliente
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             string retorno = "";
