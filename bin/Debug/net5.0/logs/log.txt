@@ -55,3 +55,18 @@
  Info|2021-04-10 04:26:43.4434|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
  Info|2021-04-10 04:26:46.2696|Caller:DIO.Bank.Program.Main|Msg:Operador [admin] logado com sucesso!
  Info|2021-04-10 04:26:57.8458|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-10 04:47:08.7124|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-10 04:47:08.8901|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-10 04:47:14.0618|Caller:DIO.Bank.Program.Main|Msg:Operador [admin] logado com sucesso!
+ Info|2021-04-10 04:47:37.0123|Caller:DIO.Bank.Program.InserirOperador|Msg:Operador Criado: Usuário [icaroralmeida] | Nome Ícaro | 
+ Info|2021-04-10 04:47:52.9759|Caller:DIO.Bank.Program.AlterarSenhaDoOperador|Msg:Senha do operador [admin - admin ] alterada com sucesso!
+ Info|2021-04-10 04:48:01.3638|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-10 04:48:14.4062|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-10 04:48:14.6069|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-10 04:48:17.8039|Caller:DIO.Bank.Program.Main|Msg:Operador [admin] logado com sucesso!
+ Info|2021-04-10 04:48:21.1992|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-10 04:48:34.5465|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de contas carregada com sucesso!
+ Info|2021-04-10 04:48:34.7143|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-10 04:48:41.8135|Caller:DIO.Bank.Program.Main|Msg:Operador [Ícaro] logado com sucesso!
+ Info|2021-04-10 04:49:01.7902|Caller:DIO.Bank.Program.AlterarSenhaDoOperador|Msg:Senha do operador [icaroralmeida - Ícaro ] alterada com sucesso!
+ Info|2021-04-10 04:49:03.1558|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...

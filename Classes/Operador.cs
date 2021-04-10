@@ -105,6 +105,25 @@ namespace DIO.Bank
         }
 
         /// <summary>
+        /// Solicita senha ao operador e verifica. Retorna via  out a senha digitada.
+        /// </summary>
+        /// <param name="senha"></param>
+        /// <returns>True se as senhas conferem</returns>
+        internal bool SolicitarSenha(out string senha)
+        {
+            Console.WriteLine($"Operador [{this.Nome}], insira a senha: ");
+            senha = EeS.ReadConsoleLine();
+
+            bool senhasConferem = false;
+            if (!(senhasConferem = Password.CompararSenhas(senha, this.Salt, this.Senha)))
+            {
+                Console.WriteLine("Senha incorreta!");
+            }
+
+            return senhasConferem;
+        }
+
+        /// <summary>
         /// Gera string com os dados do Cliente
         /// </summary>
         /// <returns></returns>

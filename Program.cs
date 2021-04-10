@@ -144,7 +144,7 @@ namespace DIO.Bank
                         Console.WriteLine();
                         Console.WriteLine("E- Inserir Operador");
                         Console.WriteLine("F- Remover Operador");
-                        Console.WriteLine("G- Alterar senha de Operador");
+                        Console.WriteLine("G- Alterar senha do Operador");
                         Console.WriteLine();
                         Console.WriteLine("L- Limpar Tela");
                         Console.WriteLine("S- Sair");
@@ -192,7 +192,7 @@ namespace DIO.Bank
                                 break;
                             case "G":
                                 isValidOption = true;
-                                //AlterarSenhaDeOperador();
+                                AlterarSenhaDoOperador();
                                 break;
 
 
@@ -218,6 +218,35 @@ namespace DIO.Bank
             {
                 logger.Error(ex.Message);
                 return "";
+            }
+        }
+
+        private static void AlterarSenhaDoOperador()
+        {
+            try
+            {
+                Console.WriteLine("Alterar a Senha Do Operador");
+
+                string senhaAntiga;
+                if (!operadorLogado.SolicitarSenha(out senhaAntiga))
+                {
+                    Console.WriteLine("Senha incorreta!");
+                    return;
+                }                               
+
+                Console.Write("Insira a nova senha: ");
+                String senhaNova = EeS.ReadConsoleLine();
+
+                if (operadorLogado.AlterarSenha(senhaAntiga, senhaNova))
+                {
+                    //salva o arquivo incluindo a nova conta
+                    ArmazenaDados.SaveList(pathListOperadores, listOperadores);
+                    logger.Info($"Senha do operador [{operadorLogado.Usuario} - {operadorLogado.Nome} ] alterada com sucesso!");
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
 
