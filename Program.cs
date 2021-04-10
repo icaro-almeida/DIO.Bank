@@ -182,6 +182,12 @@ namespace DIO.Bank
                                 isValidOption = true;
                                 AlterarSenhaDeConta();
                                 break;
+                            case "E":
+                                isValidOption = true;
+                                InserirOperador();
+                                break;
+
+
                             case "L":
                                 isValidOption = true;
                                 Console.Clear();
@@ -204,6 +210,55 @@ namespace DIO.Bank
             {
                 logger.Error(ex.Message);
                 return "";
+            }
+        }
+
+        /// <summary>
+        /// Solicita dados e insere novo operador
+        /// </summary>
+        private static void InserirOperador()
+        {
+            try
+            {
+                Console.WriteLine("Inserir novo operador");
+
+                Console.WriteLine("Digite o usuário: ");
+                string entradaUsuario = EeS.ReadConsoleLine();
+
+                bool operadorDisponivel = false;
+                Operador operador = null;
+                do
+                {
+                    operadorDisponivel = true;
+                    if ((operador = Operador.BuscaOperador(pListOperadores: listOperadores,
+                                                            entradaUsuario,
+                                                            pVerboseForAvailability: true))
+                                                            != null)
+                    {
+                        operadorDisponivel = false;
+                        Console.WriteLine("Tente outro usuário: ");
+                        entradaUsuario = EeS.ReadConsoleLine();
+                    }
+                } while (operadorDisponivel == false);
+
+                Console.Write("Digite o Nome do Operador: ");
+                string entradaNome = EeS.ReadConsoleLine();
+
+                Console.Write("Crie a senha do operador: ");
+                String entradaSenha = EeS.ReadConsoleLine();
+
+                Operador novoOperador = new Operador(pUsuario: entradaUsuario,
+                                            pSenha: entradaSenha,
+                                            pNome: entradaNome);
+
+                listOperadores.Add(novoOperador);
+                //salva o arquivo incluindo o novo operador
+                ArmazenaDados.SaveList(pathListOperadores, listOperadores);
+                logger.Info("Operador Criado: " + novoOperador.ToString());
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
 
@@ -307,7 +362,7 @@ namespace DIO.Bank
                 double valorDeposito = EeS.PedeEvalidaDouble("Digite o valor a ser depositado: ");
 
                 if (!operadorLogado.SolicitarSenha())
-                {                    
+                {
                     return;
                 }
 

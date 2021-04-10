@@ -97,5 +97,19 @@ namespace DIO.Bank
 
             return senhasConferem;
         }
+
+        /// <summary>
+        /// Gera string com os dados do Cliente
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            string retorno = "";
+            retorno += "Usuário [" + this.Usuario + "] | ";            
+            retorno += "Nome " + this.Nome + " | ";         
+
+            return retorno;
+        }
+
     }//fim da classe
 }
