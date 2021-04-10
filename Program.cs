@@ -271,6 +271,11 @@ namespace DIO.Bank
                     return;
                 }
 
+                if (!operadorLogado.SolicitarSenha())
+                {
+                    return;
+                }
+
                 if (listClientes.Remove(cliente))
                 {
                     //salva o arquivo incluindo a nova conta
