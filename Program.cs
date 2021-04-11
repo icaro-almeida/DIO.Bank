@@ -28,11 +28,11 @@ namespace DIO.Bank
             {
                 AppDomain.CurrentDomain.ProcessExit += new EventHandler(CurrentDomain_ProcessExit);
 
-                AppDomain.CurrentDomain.FirstChanceException += (sender, eventArgs) =>
-                {
-                    //https://stackify.com/csharp-exception-handling-best-practices/
-                    logger.Warn(eventArgs.Exception.ToString());
-                };
+                //AppDomain.CurrentDomain.FirstChanceException += (sender, eventArgs) =>
+                //{
+                //    //https://stackify.com/csharp-exception-handling-best-practices/
+                //    logger.Warn(eventArgs.Exception.ToString());
+                //};
 
                 CarregaDados();
 
@@ -288,7 +288,7 @@ namespace DIO.Bank
         {
             try
             {
-                Console.WriteLine("Excluir Conta");
+                Console.WriteLine("Excluir Operador");
                 Operador operador = null;
 
                 Console.WriteLine("Digite o usuário a ser excluído: ");

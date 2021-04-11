@@ -2,17 +2,20 @@
 
 ## POO na prática: criando uma aplicação bancária
 
-Projeto de sistema para operador de caixa bancário com funcionalidades de saque, transferência, depósito
+Projeto de sistema para operador bancário com funcionalidades de saque, transferência, depósito, listar, adicionar, excluir e trocar senha de contas de cliente e operador.
 
-##Usuário padrão: admin Senha: admin
-##Para sair a qualquer momento digite "sair", "fechar", "exit" ou "quit", ou feche a janela. Os dados serão salvos normalmente.
+Implementado como atividade do Bootcamp Localiza na Digital Innovation One.
 
--Uso de herança, onde as classes Cliente e Operador herdam da classe Usuario;
--Persistência dos cadastros através da classe ArmazenaDados com BinnaryFormatter.Serialize (Obsoleto);
--Armazenamento de senhas usando hash e salt (gerido pela classe criada "Password");
--Logging através da plataforma NLog;
--Classe EeS de validação de entradas do usuário.
--Uso de event handler no encerramento do programa para salvar os dados de usuários.
+#### Usuário padrão: admin Senha: admin
+
+#### Para sair a qualquer momento digite "sair", "fechar","exit", "quit", ou feche a janela. Os dados são salvos normalmentea cada modificação e ao encerrar.
+
+- Uso de herança, onde as classes Cliente e Operador herdam da classe Usuario
+- Persistência dos cadastros através da classe ArmazenaDados com BinnaryFormatter.Serialize (Obsoleto)
+- Class Password para armazenamento e verificação de senhas usando hash e salt
+- Logging através da plataforma NLog
+- Classe EeS de validação de entradas do usuário
+- Uso de event handler no encerramento do programa para salvar os dados de usuários
 
 
 ## Contato
