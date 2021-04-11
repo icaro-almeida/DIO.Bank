@@ -17,3 +17,59 @@
  Info|2021-04-11 01:20:02.2976|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
  Info|2021-04-11 01:20:02.3206|Caller:DIO.Bank.ArmazenaDados.SaveList|Msg:Arquivo salvo: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listClientes.dat
  Info|2021-04-11 01:20:02.3388|Caller:DIO.Bank.ArmazenaDados.SaveList|Msg:Arquivo salvo: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listOperadores.dat
+ Info|2021-04-11 01:39:40.3131|Caller:DIO.Bank.ArmazenaDados.LoadList|Msg:Arquivo carregado: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listClientes.dat
+ Info|2021-04-11 01:39:40.4584|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de clientes carregada: 0 clientes
+ Info|2021-04-11 01:39:40.4724|Caller:DIO.Bank.ArmazenaDados.LoadList|Msg:Arquivo carregado: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listOperadores.dat
+ Info|2021-04-11 01:39:40.4724|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada: 1 operadores
+ Info|2021-04-11 01:40:08.3487|Caller:DIO.Bank.Program.Main|Msg:Operador [Administrador] logado com sucesso!
+ Info|2021-04-11 01:40:38.5464|Caller:DIO.Bank.ArmazenaDados.SaveList|Msg:Arquivo salvo: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listClientes.dat
+ Info|2021-04-11 01:40:38.5562|Caller:DIO.Bank.Program.InserirConta|Msg:Conta Criada: Conta [1] | TipoConta PessoaFisica | Nome Teste | Saldo 13142341 | Crédito 124241 | 
+ Info|2021-04-11 01:42:21.3464|Caller:DIO.Bank.ArmazenaDados.SaveList|Msg:Arquivo salvo: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listClientes.dat
+ Info|2021-04-11 01:42:21.3464|Caller:DIO.Bank.Program.Sacar|Msg:Saque de 2 realizado na conta [1 - Teste]
+ Info|2021-04-11 01:42:27.0379|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-11 01:42:27.0687|Caller:DIO.Bank.ArmazenaDados.SaveList|Msg:Arquivo salvo: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listClientes.dat
+ Info|2021-04-11 01:42:27.0865|Caller:DIO.Bank.ArmazenaDados.SaveList|Msg:Arquivo salvo: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listOperadores.dat
+ Info|2021-04-11 01:47:46.3227|Caller:DIO.Bank.ArmazenaDados.LoadList|Msg:Arquivo carregado: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listClientes.dat
+ Trace|2021-04-11 01:47:46.4143|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de clientes carregada: 1 clientes
+ Info|2021-04-11 01:47:46.4631|Caller:DIO.Bank.ArmazenaDados.LoadList|Msg:Arquivo carregado: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listOperadores.dat
+ Trace|2021-04-11 01:47:46.4631|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada: 1 operadores
+ Info|2021-04-11 01:49:35.3000|Caller:DIO.Bank.ArmazenaDados.LoadList|Msg:Arquivo carregado: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listClientes.dat
+ Trace|2021-04-11 01:49:35.4091|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de clientes carregada: 1 clientes
+ Info|2021-04-11 01:49:35.5343|Caller:DIO.Bank.ArmazenaDados.LoadList|Msg:Arquivo carregado: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listOperadores.dat
+ Trace|2021-04-11 01:49:35.5343|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada: 1 operadores
+ Trace|2021-04-11 01:49:40.6842|Caller:DIO.Bank.Program.Main|Msg:Operador [Administrador] logado com sucesso!
+ Trace|2021-04-11 01:50:21.5474|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-11 01:50:21.5740|Caller:DIO.Bank.ArmazenaDados.SaveList|Msg:Arquivo salvo: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listClientes.dat
+ Info|2021-04-11 01:50:21.5941|Caller:DIO.Bank.ArmazenaDados.SaveList|Msg:Arquivo salvo: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listOperadores.dat
+ Info|2021-04-11 02:28:20.9496|Caller:DIO.Bank.ArmazenaDados.LoadList|Msg:Arquivo carregado: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listClientes.dat
+ Trace|2021-04-11 02:28:21.0423|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de clientes carregada: 1 clientes
+ Info|2021-04-11 02:28:21.0756|Caller:DIO.Bank.ArmazenaDados.LoadList|Msg:Arquivo carregado: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listOperadores.dat
+ Trace|2021-04-11 02:28:21.0840|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada: 1 operadores
+ Trace|2021-04-11 02:28:29.3283|Caller:DIO.Bank.Program.Main|Msg:Operador [Administrador] logado com sucesso!
+ Trace|2021-04-11 02:28:31.2595|Caller:DIO.Bank.Program.ExibeMenu1|Msg:Operador [Administrador] fez logoff.
+ Trace|2021-04-11 02:28:38.3897|Caller:DIO.Bank.Program.Main|Msg:Operador [Administrador] logado com sucesso!
+ Trace|2021-04-11 02:28:52.6277|Caller:DIO.Bank.Program.ExibeMenu1|Msg:Operador [Administrador] fez logoff.
+ Trace|2021-04-11 02:29:08.9880|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-11 02:29:09.0170|Caller:DIO.Bank.ArmazenaDados.SaveList|Msg:Arquivo salvo: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listClientes.dat
+ Info|2021-04-11 02:29:09.0548|Caller:DIO.Bank.ArmazenaDados.SaveList|Msg:Arquivo salvo: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listOperadores.dat
+ Info|2021-04-11 02:29:36.8053|Caller:DIO.Bank.ArmazenaDados.LoadList|Msg:Arquivo carregado: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listClientes.dat
+ Trace|2021-04-11 02:29:37.4738|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de clientes carregada: 1 clientes
+ Info|2021-04-11 02:29:37.4929|Caller:DIO.Bank.ArmazenaDados.LoadList|Msg:Arquivo carregado: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listOperadores.dat
+ Trace|2021-04-11 02:29:37.5046|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada: 1 operadores
+ Trace|2021-04-11 02:29:42.2478|Caller:DIO.Bank.Program.Main|Msg:Operador [Administrador] logado com sucesso!
+ Trace|2021-04-11 02:29:44.4835|Caller:DIO.Bank.Program.ExibeMenu1|Msg:Operador [Administrador] fez logoff.
+ Trace|2021-04-11 02:29:50.6643|Caller:DIO.Bank.Program.Main|Msg:Operador [Administrador] logado com sucesso!
+ Info|2021-04-11 02:30:24.8693|Caller:DIO.Bank.ArmazenaDados.SaveList|Msg:Arquivo salvo: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listClientes.dat
+ Trace|2021-04-11 02:30:24.8693|Caller:DIO.Bank.Program.Depositar|Msg:Depósito de 12346 na conta [1 - Teste] realizado com sucesso!
+ Info|2021-04-11 02:30:35.3013|Caller:DIO.Bank.ArmazenaDados.SaveList|Msg:Arquivo salvo: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listOperadores.dat
+ Trace|2021-04-11 02:30:35.3013|Caller:DIO.Bank.Program.InserirOperador|Msg:Operador Criado: Usuário [teste] | Nome teste | 
+ Trace|2021-04-11 02:30:38.4110|Caller:DIO.Bank.Program.ExibeMenu1|Msg:Operador [Administrador] fez logoff.
+ Trace|2021-04-11 02:30:42.2694|Caller:DIO.Bank.Program.Main|Msg:Operador [teste] logado com sucesso!
+ Trace|2021-04-11 02:30:47.5470|Caller:DIO.Bank.Program.ExibeMenu1|Msg:Operador [teste] fez logoff.
+ Trace|2021-04-11 02:30:52.8977|Caller:DIO.Bank.Program.Main|Msg:Operador [Administrador] logado com sucesso!
+ Info|2021-04-11 02:31:05.1300|Caller:DIO.Bank.ArmazenaDados.SaveList|Msg:Arquivo salvo: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listOperadores.dat
+ Trace|2021-04-11 02:31:05.1300|Caller:DIO.Bank.Program.ExcluirOperador|Msg:Operador [teste] removido com sucesso!
+ Trace|2021-04-11 02:31:07.2712|Caller:DIO.Bank.Program.ExibeMenu1|Msg:Operador [Administrador] fez logoff.
+ Trace|2021-04-11 02:31:09.1124|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-11 02:31:09.1276|Caller:DIO.Bank.ArmazenaDados.SaveList|Msg:Arquivo salvo: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listClientes.dat
+ Info|2021-04-11 02:31:09.1465|Caller:DIO.Bank.ArmazenaDados.SaveList|Msg:Arquivo salvo: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listOperadores.dat

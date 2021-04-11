@@ -37,14 +37,20 @@ namespace DIO.Bank
 
                 CarregaDados();
 
-                //Exibe menus até que usuário escolha S para Sair
-                do
+                operadorLogado = Operador.ExecutaLoginOperador(listOperadores);
+                if (operadorLogado != null)
+                    logger.Trace($"Operador [{operadorLogado.Nome}] logado com sucesso!");
+
+                while (true)
                 {
-                    //todo alterar estrutura de troca de menus pra permitir login e logoff
-                    operadorLogado = Operador.ExecutaLoginOperador(listOperadores);
-                    if (operadorLogado != null)
-                        logger.Info($"Operador [{operadorLogado.Nome}] logado com sucesso!");
-                } while (ExibeMenu1() != "S");
+                    if (ExibeMenu1() == "Z")
+                    {
+                        Console.Clear();
+                        operadorLogado = Operador.ExecutaLoginOperador(listOperadores);
+                        if (operadorLogado != null)
+                            logger.Trace($"Operador [{operadorLogado.Nome}] logado com sucesso!");
+                    }
+                }
 
                 ////mantém console aberto até que pressionem uma tecla:
                 //EeS.ReadConsoleLine();
@@ -64,7 +70,7 @@ namespace DIO.Bank
         {
             try
             {
-                logger.Info("Saindo...");
+                logger.Trace("Saindo...");
                 //Salva dados de contas e operadores antes de encerrar:
                 ArmazenaDados.SaveList(pathListClientesFile, listClientes);
                 ArmazenaDados.SaveList(pathListOperadoresFile, listOperadores);
@@ -88,7 +94,7 @@ namespace DIO.Bank
                 listClientes = ArmazenaDados.LoadList<Cliente>(pathListClientesFile);
                 if (listClientes != null)
                 {
-                    logger.Info($"Lista de clientes carregada: {listClientes.Count} clientes");
+                    logger.Trace($"Lista de clientes carregada: {listClientes.Count} clientes");
                 }
                 else
                 {
@@ -108,7 +114,7 @@ namespace DIO.Bank
                 }
                 else
                 {
-                    logger.Info($"Lista de operadores carregada: {listOperadores.Count} operadores");
+                    logger.Trace($"Lista de operadores carregada: {listOperadores.Count} operadores");
                 }
             }
             catch (Exception ex)
@@ -123,101 +129,106 @@ namespace DIO.Bank
             try
             {
                 bool isValidOption = false;
-                string opcaoUsuario = null;
+                string opcaoUsuario = "";
 
-                while (opcaoUsuario != "S")
+                do
                 {
-                    do
+                    Console.WriteLine();
+
+                    Console.WriteLine("OPERADOR: " + operadorLogado.Nome);
+                    Console.WriteLine("Informe a opção desejada:");
+                    Console.WriteLine("1- Depositar");
+                    Console.WriteLine("2- Sacar");
+                    Console.WriteLine("3- Transferir");
+                    Console.WriteLine();
+                    Console.WriteLine("A- Listar contas");
+                    Console.WriteLine("B- Inserir nova conta");
+                    Console.WriteLine("C- Excluir conta");
+                    Console.WriteLine("D- Alterar senha de conta");
+                    Console.WriteLine();
+                    Console.WriteLine("E- Listar operadores");
+                    Console.WriteLine("F- Inserir Operador");
+                    Console.WriteLine("G- Remover Operador");
+                    Console.WriteLine("H- Alterar senha do Operador");
+                    Console.WriteLine();
+                    Console.WriteLine("L- Limpar Tela");
+                    Console.WriteLine("S- Sair/Fechar");
+                    Console.WriteLine("Z- Fazer Logoff");
+                    //todo implementar menu com setas
+
+                    Console.WriteLine();
+                    opcaoUsuario = EeS.ReadConsoleLine().ToUpper();
+
+                    switch (opcaoUsuario)
                     {
-                        Console.WriteLine();
+                        case "1":
+                            isValidOption = true;
+                            Depositar();
+                            break;
+                        case "2":
+                            isValidOption = true;
+                            Sacar();
+                            break;
+                        case "3":
+                            isValidOption = true;
+                            Transferir();
+                            break;
+                        case "A":
+                            isValidOption = true;
+                            ListarContas();
+                            break;
+                        case "B":
+                            isValidOption = true;
+                            InserirConta();
+                            break;
+                        case "C":
+                            isValidOption = true;
+                            ExcluirConta();
+                            break;
+                        case "D":
+                            isValidOption = true;
+                            AlterarSenhaDeConta();
+                            break;
 
-                        Console.WriteLine("OPERADOR: " + operadorLogado.Nome);
-                        Console.WriteLine("Informe a opção desejada:");
-                        Console.WriteLine("1- Depositar");
-                        Console.WriteLine("2- Sacar");
-                        Console.WriteLine("3- Transferir");
-                        Console.WriteLine();
-                        Console.WriteLine("A- Listar contas");
-                        Console.WriteLine("B- Inserir nova conta");
-                        Console.WriteLine("C- Excluir conta");
-                        Console.WriteLine("D- Alterar senha de conta");
-                        Console.WriteLine();
-                        Console.WriteLine("E- Listar operadores");
-                        Console.WriteLine("F- Inserir Operador");
-                        Console.WriteLine("G- Remover Operador");
-                        Console.WriteLine("H- Alterar senha do Operador");
-                        Console.WriteLine();
-                        Console.WriteLine("L- Limpar Tela");
-                        Console.WriteLine("S- Sair");
-                        //todo implementar menu com setas
-
-                        Console.WriteLine();
-                        opcaoUsuario = EeS.ReadConsoleLine().ToUpper();
-
-                        switch (opcaoUsuario)
-                        {
-                            case "1":
-                                isValidOption = true;
-                                Depositar();
-                                break;
-                            case "2":
-                                isValidOption = true;
-                                Sacar();
-                                break;
-                            case "3":
-                                isValidOption = true;
-                                Transferir();
-                                break;
-                            case "A":
-                                isValidOption = true;
-                                ListarContas();
-                                break;
-                            case "B":
-                                isValidOption = true;
-                                InserirConta();
-                                break;
-                            case "C":
-                                isValidOption = true;
-                                ExcluirConta();
-                                break;
-                            case "D":
-                                isValidOption = true;
-                                AlterarSenhaDeConta();
-                                break;
-
-                            case "E":
-                                isValidOption = true;
-                                ListarOperadores();
-                                break;
-                            case "F":
-                                isValidOption = true;
-                                InserirOperador();
-                                break;
-                            case "G":
-                                isValidOption = true;
-                                ExcluirOperador();
-                                break;
-                            case "H":
-                                isValidOption = true;
-                                AlterarSenhaDoOperador();
-                                break;
+                        case "E":
+                            isValidOption = true;
+                            ListarOperadores();
+                            break;
+                        case "F":
+                            isValidOption = true;
+                            InserirOperador();
+                            break;
+                        case "G":
+                            isValidOption = true;
+                            ExcluirOperador();
+                            break;
+                        case "H":
+                            isValidOption = true;
+                            AlterarSenhaDoOperador();
+                            break;
 
 
-                            case "L":
-                                isValidOption = true;
-                                Console.Clear();
-                                break;
-                            case "S":
-                                isValidOption = true;
-                                break;
-                            default:
-                                isValidOption = false;
-                                Console.WriteLine("Opção inválida!");
-                                break;
-                        }
+                        case "L":
+                            isValidOption = true;
+                            Console.Clear();
+                            break;
+                        case "S":
+                            isValidOption = true;
+                            Environment.Exit(0);
+                            break;
+                        case "Z":
+                            //logoff
+                            isValidOption = true;
+                            logger.Trace($"Operador [{operadorLogado.Nome}] fez logoff.");
+                            operadorLogado = null;
+                            break;
+                        default:
+                            isValidOption = false;
+                            Console.WriteLine("Opção inválida!");
+                            break;
+                    }
 
-                    } while (isValidOption == false);
-                }
+                } while (isValidOption == false);
 
                 return opcaoUsuario;
             }
@@ -272,7 +283,7 @@ namespace DIO.Bank
                 {
                     //salva o arquivo incluindo a nova conta
                     ArmazenaDados.SaveList(pathListOperadoresFile, listOperadores);
-                    logger.Info($"Senha do operador [{operadorLogado.Usuario} - {operadorLogado.Nome} ] alterada com sucesso!");
+                    logger.Trace($"Senha do operador [{operadorLogado.Usuario} - {operadorLogado.Nome} ] alterada com sucesso!");
                 }
             }
             catch (Exception ex)
@@ -318,7 +329,7 @@ namespace DIO.Bank
                 {
                     //salva o arquivo incluindo o novo operador
                     ArmazenaDados.SaveList(pathListOperadoresFile, listOperadores);
-                    logger.Info($"Operador [{operador.Usuario}] removido com sucesso!");
+                    logger.Trace($"Operador [{operador.Usuario}] removido com sucesso!");
                 }
             }
             catch (Exception ex)
@@ -368,7 +379,7 @@ namespace DIO.Bank
                 listOperadores.Add(novoOperador);
                 //salva o arquivo incluindo o novo operador
                 ArmazenaDados.SaveList(pathListOperadoresFile, listOperadores);
-                logger.Info("Operador Criado: " + novoOperador.ToString());
+                logger.Trace("Operador Criado: " + novoOperador.ToString());
             }
             catch (Exception ex)
             {
@@ -413,7 +424,7 @@ namespace DIO.Bank
                 {
                     //salva o arquivo incluindo a nova conta
                     ArmazenaDados.SaveList(pathListClientesFile, listClientes);
-                    logger.Info($"Senha da conta [{objCliente.NumConta} - {objCliente.Nome} ] alterada com sucesso!");
+                    logger.Trace($"Senha da conta [{objCliente.NumConta} - {objCliente.Nome} ] alterada com sucesso!");
                 }
             }
             catch (Exception ex)
@@ -449,7 +460,7 @@ namespace DIO.Bank
                 {
                     //salva o arquivo incluindo a nova conta
                     ArmazenaDados.SaveList(pathListClientesFile, listClientes);
-                    logger.Info($"Conta [{cliente.NumConta}] removida com sucesso!");
+                    logger.Trace($"Conta [{cliente.NumConta}] removida com sucesso!");
                 }
             }
             catch (Exception ex)
@@ -483,7 +494,7 @@ namespace DIO.Bank
                 objCliente.Depositar(valorDeposito);
                 //salva o arquivo incluindo a nova conta
                 ArmazenaDados.SaveList(pathListClientesFile, listClientes);
-                logger.Info($"Depósito de {valorDeposito} na conta [{objCliente.NumConta} - {objCliente.Nome}] realizado com sucesso!");
+                logger.Trace($"Depósito de {valorDeposito} na conta [{objCliente.NumConta} - {objCliente.Nome}] realizado com sucesso!");
 
             }
             catch (Exception ex)
@@ -516,7 +527,7 @@ namespace DIO.Bank
                 {
                     //salva o arquivo incluindo a nova conta
                     ArmazenaDados.SaveList(pathListClientesFile, listClientes);
-                    logger.Info($"Saque de {valorSaque} realizado na conta [{objConta.NumConta} - {objConta.Nome}]");
+                    logger.Trace($"Saque de {valorSaque} realizado na conta [{objConta.NumConta} - {objConta.Nome}]");
                 }
             }
             catch (Exception ex)
@@ -554,7 +565,7 @@ namespace DIO.Bank
                 {
                     //salva o arquivo incluindo a nova conta
                     ArmazenaDados.SaveList(pathListClientesFile, listClientes);
-                    logger.Info($"Transferência de {valorTransferencia} realizada de conta [{clienteOrigem.NumConta} - {clienteOrigem.Nome}] para a conta [{clienteDestino.NumConta} - {clienteDestino.Nome}]");
+                    logger.Trace($"Transferência de {valorTransferencia} realizada de conta [{clienteOrigem.NumConta} - {clienteOrigem.Nome}] para a conta [{clienteDestino.NumConta} - {clienteDestino.Nome}]");
                 }
             }
             catch (Exception ex)
@@ -617,7 +628,7 @@ namespace DIO.Bank
                 listClientes.Add(novaConta);
                 //salva o arquivo incluindo a nova conta
                 ArmazenaDados.SaveList(pathListClientesFile, listClientes);
-                logger.Info("Conta Criada: " + novaConta.ToString());
+                logger.Trace("Conta Criada: " + novaConta.ToString());
             }
             catch (Exception ex)
             {
