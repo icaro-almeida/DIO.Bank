@@ -17,8 +17,9 @@ namespace DIO.Bank
         //Soluciona problema de diretório variável entre "dotnet run", vscode e visual studio
         static string diretorioBase = AppDomain.CurrentDomain.BaseDirectory; //https://jeremybytes.blogspot.com/2020/02/set-working-directory-in-visual-studio.html
 
-        static string pathListClientes = diretorioBase + "dados\\listClientes.dat";
-        static string pathListOperadores = diretorioBase + "dados\\listOperadores.dat";
+        static string pathDataFolder = diretorioBase + "dados\\";
+        static string pathListClientesFile = pathDataFolder + "listClientes.dat";
+        static string pathListOperadoresFile = pathDataFolder + "listOperadores.dat";
 
         static Operador operadorLogado = null;
 
@@ -35,14 +36,6 @@ namespace DIO.Bank
                 //};
 
                 CarregaDados();
-
-                //Cria usuário admin caso não encontre arquivo de operadores
-                if (listOperadores.Count == 0)
-                {
-                    listOperadores.Add(new Operador("admin", "admin", "admin"));
-                    //Cria o arquivo que salva os usuários operadores com novo operador Admin
-                    ArmazenaDados.SaveList(pathListOperadores, listOperadores);
-                }
 
                 //Exibe menus até que usuário escolha S para Sair
                 do
@@ -73,8 +66,8 @@ namespace DIO.Bank
             {
                 logger.Info("Saindo...");
                 //Salva dados de contas e operadores antes de encerrar:
-                ArmazenaDados.SaveList(pathListClientes, listClientes);
-                ArmazenaDados.SaveList(pathListOperadores, listOperadores);
+                ArmazenaDados.SaveList(pathListClientesFile, listClientes);
+                ArmazenaDados.SaveList(pathListOperadoresFile, listOperadores);
             }
             catch (Exception ex)
             {
@@ -89,26 +82,33 @@ namespace DIO.Bank
         {
             try
             {
+                ArmazenaDados.VerificaECriaDiretorio(pathDataFolder);
+
                 //Carrega lista de clientes/contas
-                listClientes = ArmazenaDados.LoadList<Cliente>(pathListClientes);
-                if (listClientes.Count == 0)
+                listClientes = ArmazenaDados.LoadList<Cliente>(pathListClientesFile);
+                if (listClientes != null)
+                {
+                    logger.Info($"Lista de clientes carregada: {listClientes.Count} clientes");
+                }
+                else
                 {
                     logger.Error("Não foi possível carregar a lista de contas!");
                 }
-                else
-                {
-                    logger.Info("Lista de contas carregada com sucesso!");
-                }
 
                 //carrega lista de operadores
-                listOperadores = ArmazenaDados.LoadList<Operador>(pathListOperadores);
-                if (listOperadores.Count == 0)
+                listOperadores = ArmazenaDados.LoadList<Operador>(pathListOperadoresFile);
+                if (listOperadores == null)
                 {
                     logger.Error("Não foi possível carregar a lista de operadores!");
+
+                    //Cria usuário admin caso não encontre arquivo de operadores
+                    listOperadores.Add(new Operador("admin", "admin", "Administrador"));
+                    //Cria o arquivo que salva os usuários operadores com novo operador Admin
+                    ArmazenaDados.SaveList(pathListOperadoresFile, listOperadores);
                 }
                 else
                 {
-                    logger.Info("Lista de operadores carregada com sucesso!");
+                    logger.Info($"Lista de operadores carregada: {listOperadores.Count} operadores");
                 }
             }
             catch (Exception ex)
@@ -263,7 +263,7 @@ namespace DIO.Bank
                 {
                     Console.WriteLine("Senha incorreta!");
                     return;
-                }                               
+                }
 
                 Console.Write("Insira a nova senha: ");
                 String senhaNova = EeS.ReadConsoleLine();
@@ -271,7 +271,7 @@ namespace DIO.Bank
                 if (operadorLogado.AlterarSenha(senhaAntiga, senhaNova))
                 {
                     //salva o arquivo incluindo a nova conta
-                    ArmazenaDados.SaveList(pathListOperadores, listOperadores);
+                    ArmazenaDados.SaveList(pathListOperadoresFile, listOperadores);
                     logger.Info($"Senha do operador [{operadorLogado.Usuario} - {operadorLogado.Nome} ] alterada com sucesso!");
                 }
             }
@@ -317,7 +317,7 @@ namespace DIO.Bank
                 if (listOperadores.Remove(operador))
                 {
                     //salva o arquivo incluindo o novo operador
-                    ArmazenaDados.SaveList(pathListOperadores, listOperadores);
+                    ArmazenaDados.SaveList(pathListOperadoresFile, listOperadores);
                     logger.Info($"Operador [{operador.Usuario}] removido com sucesso!");
                 }
             }
@@ -367,7 +367,7 @@ namespace DIO.Bank
 
                 listOperadores.Add(novoOperador);
                 //salva o arquivo incluindo o novo operador
-                ArmazenaDados.SaveList(pathListOperadores, listOperadores);
+                ArmazenaDados.SaveList(pathListOperadoresFile, listOperadores);
                 logger.Info("Operador Criado: " + novoOperador.ToString());
             }
             catch (Exception ex)
@@ -412,7 +412,7 @@ namespace DIO.Bank
                 if (objCliente.AlterarSenha(senhaAntiga, senhaNova))
                 {
                     //salva o arquivo incluindo a nova conta
-                    ArmazenaDados.SaveList(pathListClientes, listClientes);
+                    ArmazenaDados.SaveList(pathListClientesFile, listClientes);
                     logger.Info($"Senha da conta [{objCliente.NumConta} - {objCliente.Nome} ] alterada com sucesso!");
                 }
             }
@@ -448,7 +448,7 @@ namespace DIO.Bank
                 if (listClientes.Remove(cliente))
                 {
                     //salva o arquivo incluindo a nova conta
-                    ArmazenaDados.SaveList(pathListClientes, listClientes);
+                    ArmazenaDados.SaveList(pathListClientesFile, listClientes);
                     logger.Info($"Conta [{cliente.NumConta}] removida com sucesso!");
                 }
             }
@@ -482,7 +482,7 @@ namespace DIO.Bank
 
                 objCliente.Depositar(valorDeposito);
                 //salva o arquivo incluindo a nova conta
-                ArmazenaDados.SaveList(pathListClientes, listClientes);
+                ArmazenaDados.SaveList(pathListClientesFile, listClientes);
                 logger.Info($"Depósito de {valorDeposito} na conta [{objCliente.NumConta} - {objCliente.Nome}] realizado com sucesso!");
 
             }
@@ -515,7 +515,7 @@ namespace DIO.Bank
                 if (objConta.Sacar(valorSaque, senha))
                 {
                     //salva o arquivo incluindo a nova conta
-                    ArmazenaDados.SaveList(pathListClientes, listClientes);
+                    ArmazenaDados.SaveList(pathListClientesFile, listClientes);
                     logger.Info($"Saque de {valorSaque} realizado na conta [{objConta.NumConta} - {objConta.Nome}]");
                 }
             }
@@ -553,7 +553,7 @@ namespace DIO.Bank
                 if (clienteOrigem.Transferir(senha, valorTransferencia, clienteDestino))
                 {
                     //salva o arquivo incluindo a nova conta
-                    ArmazenaDados.SaveList(pathListClientes, listClientes);
+                    ArmazenaDados.SaveList(pathListClientesFile, listClientes);
                     logger.Info($"Transferência de {valorTransferencia} realizada de conta [{clienteOrigem.NumConta} - {clienteOrigem.Nome}] para a conta [{clienteDestino.NumConta} - {clienteDestino.Nome}]");
                 }
             }
@@ -616,7 +616,7 @@ namespace DIO.Bank
 
                 listClientes.Add(novaConta);
                 //salva o arquivo incluindo a nova conta
-                ArmazenaDados.SaveList(pathListClientes, listClientes);
+                ArmazenaDados.SaveList(pathListClientesFile, listClientes);
                 logger.Info("Conta Criada: " + novaConta.ToString());
             }
             catch (Exception ex)

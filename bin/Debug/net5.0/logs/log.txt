@@ -1,2 +1,19 @@
  Info|2021-04-11 00:01:15.5494|Caller:DIO.Bank.Program.ExcluirOperador|Msg:Operador [icaroralmeida] removido com sucesso!
  Info|2021-04-11 00:02:24.1263|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Error|2021-04-11 00:11:33.1156|Caller:DIO.Bank.Program.CarregaDados|Msg:Não foi possível carregar a lista de contas!
+ Error|2021-04-11 00:11:33.1857|Caller:DIO.Bank.Program.CarregaDados|Msg:Não foi possível carregar a lista de operadores!
+ Error|2021-04-11 00:41:57.0789|Caller:DIO.Bank.Program.CarregaDados|Msg:Não foi possível carregar a lista de contas!
+ Info|2021-04-11 00:41:57.2428|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada com sucesso!
+ Info|2021-04-11 00:59:49.3509|Caller:DIO.Bank.Program.Main|Msg:Operador [admin] logado com sucesso!
+ Info|2021-04-11 00:59:50.7214|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Error|2021-04-11 01:00:07.5422|Caller:DIO.Bank.Program.CarregaDados|Msg:Não foi possível carregar a lista de contas!
+ Error|2021-04-11 01:00:07.6705|Caller:DIO.Bank.Program.CarregaDados|Msg:Não foi possível carregar a lista de operadores!
+ Info|2021-04-11 01:00:32.0598|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-11 01:18:51.4954|Caller:DIO.Bank.ArmazenaDados.LoadList|Msg:Arquivo carregado: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listClientes.dat
+ Info|2021-04-11 01:18:51.6546|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de clientes carregada: 0 clientes
+ Info|2021-04-11 01:18:51.6845|Caller:DIO.Bank.ArmazenaDados.LoadList|Msg:Arquivo carregado: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listOperadores.dat
+ Info|2021-04-11 01:18:51.6927|Caller:DIO.Bank.Program.CarregaDados|Msg:Lista de operadores carregada: 1 operadores
+ Info|2021-04-11 01:20:00.6391|Caller:DIO.Bank.Program.Main|Msg:Operador [Administrador] logado com sucesso!
+ Info|2021-04-11 01:20:02.2976|Caller:DIO.Bank.Program.CurrentDomain_ProcessExit|Msg:Saindo...
+ Info|2021-04-11 01:20:02.3206|Caller:DIO.Bank.ArmazenaDados.SaveList|Msg:Arquivo salvo: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listClientes.dat
+ Info|2021-04-11 01:20:02.3388|Caller:DIO.Bank.ArmazenaDados.SaveList|Msg:Arquivo salvo: Z:\Meu Drive\001-Guardar\016-Cursos_e_aulas\Bootcamp_Localiza\05-AplicacaoBancariaDotNet\DIO.Bank\bin\Debug\net5.0\dados\listOperadores.dat
